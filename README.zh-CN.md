@@ -94,12 +94,6 @@ Autoloom 客户端源码目前尚未公开。我们会根据项目进展、社�
 <details>
 <summary>Alpha 使用说明与验证范围</summary>
 
-中文用户可扫描下方二维码加入 QQ 群交流（群号：`694329785`）。
-
-<p align="center">
-  <img src="assets/autoloom-qq-group.jpg" alt="Autoloom 中文社区 QQ 群二维码（群号：694329785）" width="320" />
-</p>
-
 - 当前发布 Windows x64 测试版。Alpha 阶段数据格式可能变化，升级前请备份重要项目和任务记录；不兼容版本会提供手动升级指引。
 - SSH 远端项目支持 Linux x64，需要可用的 SSH 连接及 Node.js 22.x（22.19 或更高）。运行受限命令还需要可用的 Bubblewrap 沙箱后端。
 - 当前安装包未进行 Windows 代码签名，可能显示未知发布者或 SmartScreen 提示。请从本仓库 Releases 下载并核对校验和，无需关闭系统安全功能。
@@ -107,3 +101,9 @@ Autoloom 客户端源码目前尚未公开。我们会根据项目进展、社�
 - 各版本的变更和验证范围以对应 Release 说明为准；无密钥安装、更新或界面检查不等于真实模型端到端测试通过。
 
 </details>
+
+中文用户可扫描下方二维码加入 QQ 群交流（群号：`694329785`）。
+
+<p align="center">
+  <img src="assets/autoloom-qq-group.jpg" alt="Autoloom 中文社区 QQ 群二维码（群号：694329785）" width="320" />
+</p>
