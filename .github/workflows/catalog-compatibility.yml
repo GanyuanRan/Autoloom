@@ -1,0 +1,45 @@
+name: Subscription catalog candidates
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Detect the official stable Codex release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          gh api repos/openai/codex/releases/latest > upstream-release.json
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          upstream = json.loads(Path('upstream-release.json').read_text())
+          match = re.fullmatch(r'rust-v(\d+\.\d+\.\d+)', upstream['tag_name'])
+          if not match or upstream['draft'] or upstream['prerelease']:
+              raise SystemExit('Expected an official stable Codex release')
+          reviewed = json.loads(Path('metadata/subscription-compatibility.json').read_text())
+          current = reviewed['adapters']['openai-codex/1']['clientVersion']
+          candidate = {'candidate': match[1], 'reviewed': current,
+                       'requiresReview': match[1] != current, 'verified': False,
+                       'source': upstream['html_url']}
+          Path('catalog-candidate.json').write_text(json.dumps(candidate, indent=2) + '\n')
+          print(json.dumps(candidate))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-version-candidate
+          path: catalog-candidate.json
+          retention-days: 14
+
