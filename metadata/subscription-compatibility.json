@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "adapters": {
+    "openai-codex/1": {
+      "clientVersion": "0.159.3"
+    }
+  }
+}
