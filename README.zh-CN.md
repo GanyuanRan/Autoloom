@@ -6,6 +6,8 @@
 
 <p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
+<p align="center"><a href="https://linux.do/"><img src="https://ld.xh.do/ld-badge.svg" alt="认可 LINUX DO 社区" width="200" height="28" /></a></p>
+
 <table>
   <tr><th width="50%">对话界面</th><th width="50%">设置界面</th></tr>
   <tr>
