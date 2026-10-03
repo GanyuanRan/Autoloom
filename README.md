@@ -4,7 +4,7 @@
 
 <p align="center">Free desktop client · Your choice of model · Windows x64 Alpha</p>
 
-<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">Download Alpha</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
+<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">Download Alpha</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
 
 <table>
   <tr><th width="50%">Conversation</th><th width="50%">Settings</th></tr>
@@ -80,6 +80,15 @@ The client is free; your chosen provider bills model usage.
 The workspace supports local projects and Linux x64 projects connected over SSH, with project files, code diffs, command logs and previews. Remote environment requirements are listed in the Alpha notes below.
 
 The installed client supports background checks and downloads for Alpha updates. Once a download is ready, click “Restart to update” to install and reopen the client. Finish or stop active tasks first; ordinary exit does not install an update. Users of the older extracted ZIP must install the first installer release manually.
+
+The [user documentation](docs/README.md) covers model providers, permissions, local and SSH projects, Session backup, updates, and troubleshooting.
+
+## Project information
+
+- [Security policy](SECURITY.md) and private vulnerability reporting
+- [Data and privacy](DATA_AND_PRIVACY.md)
+- [Release history](CHANGELOG.md), generated from GitHub Releases
+- [License and use](LICENSE.md)
 
 ## Bring a real task and try it
 

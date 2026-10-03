@@ -1,0 +1,38 @@
+name: Refresh release index
+
+on:
+  release:
+    types: [published, edited, deleted, released, unpublished]
+  schedule:
+    - cron: '41 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog-main
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Generate release index
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/generate-changelog.mjs "${GITHUB_REPOSITORY}"
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- CHANGELOG.md CHANGELOG.zh-CN.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md CHANGELOG.zh-CN.md
+          git commit -m "docs: refresh release index"
+          git push origin HEAD:main

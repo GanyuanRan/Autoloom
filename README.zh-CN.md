@@ -4,7 +4,7 @@
 
 <p align="center">免费桌面客户端 · 自选模型 · Windows x64 Alpha</p>
 
-<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
+<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
 <table>
   <tr><th width="50%">对话界面</th><th width="50%">设置界面</th></tr>
@@ -80,6 +80,15 @@ Autoloom 目前处于 Alpha 阶段。全自动开发与更好的三者平衡，�
 工作台支持本地项目与 SSH 连接的 Linux x64 项目，提供项目文件、代码差异、命令日志和预览入口。远端环境要求见下方 Alpha 使用说明。
 
 安装版支持后台检查和下载 Alpha 更新。下载完成后点击“重启更新”即可安装并重新打开客户端；活动任务需先完成或停止，普通退出不会安装更新。旧 ZIP 解压版用户需手动安装首个安装版。
+
+[使用文档](docs/README.zh-CN.md)包含模型供应商、权限、本地与 SSH 项目、Session 备份、更新和故障排查说明。
+
+## 项目信息
+
+- [安全策略](SECURITY.zh-CN.md)与私密漏洞报告入口
+- [数据与隐私](DATA_AND_PRIVACY.zh-CN.md)
+- 从 GitHub Releases 自动生成的[版本历史](CHANGELOG.zh-CN.md)
+- [许可与使用条款](LICENSE.md#中文)
 
 ## 带一个真实需求来试试
 
