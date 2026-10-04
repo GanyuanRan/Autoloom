@@ -32,6 +32,16 @@ A model entered by hand is treated as text-only unless its configuration declare
 
 For each turn, Autoloom sends the assembled request to the selected endpoint. It can include system instructions, conversation history, tool definitions and results, selected file content, and attachments. Credentials authorize the request but are not inserted into the conversation. Review the provider's own privacy and retention policy before using sensitive projects.
 
+## Web search and page reading
+
+Autoloom treats discovery and reading a known page as separate operations. For `web_search`, it first asks the exact model route selected for the current step to perform an isolated hosted search. That auxiliary request contains only a fixed search instruction and the query, and Autoloom accepts it only when the provider reports that its server-side search tool actually ran.
+
+Autoloom uses the independent search service selected under **Settings → Plugins → Web search** only when the model route explicitly does not support hosted search or does not execute it. Authentication, quota, timeout, transport, and provider-server failures remain visible errors instead of silently sending the query to another service. If neither hosted search nor a configured fallback is available, Autoloom explains where to configure one.
+
+Reading a specific HTTP(S) URL uses `web_fetch` directly and does not depend on search support. It accepts only public-network destinations. Search results and fetched pages are supplied to the Agent as untrusted reference data, so instructions embedded in a page do not override your request or Autoloom's rules.
+
+In the current Alpha, `web_search` is available for local projects. An SSH project reports search as unavailable instead of copying search credentials to the remote host.
+
 ## Common failures
 
 - **Missing credential**: save the required key or sign in to the required account, then retry.

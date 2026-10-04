@@ -55,3 +55,11 @@ Credential values are not copied to the remote host. When the connection is lost
 Project web previews are rendered on the Windows computer. For an SSH project, a remote service must be opened through the application's explicit SSH loopback forwarding; `localhost` in an ordinary local preview refers to the Windows computer.
 
 Removing a saved SSH project or bookmark does not delete the remote directory. Back up the remote `.autoloom` directory together with the rest of the remote project, and preserve the remote attachment store when its images matter. See [Sessions, backup, and recovery](sessions-backup-and-recovery.md).
+
+## Docked terminal
+
+Open the right sidebar to start or reconnect to interactive terminals for the active project. A local project opens a Windows shell on the Windows computer; an SSH project opens a shell on its selected remote Linux host. Multiple terminal tabs can stay open.
+
+Collapsing the sidebar, switching to another sidebar tab, or refreshing the interface disconnects only the view and keeps the terminal process alive. Closing a terminal tab ends that process. Closing the project Host or Session ends all terminals it owns.
+
+The terminal runs with the current system account and is operated directly by you. Its commands do not use Agent tool approval or the Agent sandbox, and terminal input and output are not added to the Session log or model context.

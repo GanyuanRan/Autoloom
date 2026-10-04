@@ -33,6 +33,8 @@ Spend less time reminding your agent to investigate first, avoid unnecessary com
 
 Autoloom delivers these method requirements at the relevant points, checks prerequisite ordering for key operations, and retains process records. Whether a method was applied well and a result is reliable still needs to be judged from code, execution results, and verification evidence.
 
+Before an admitted project mutation runs, the conversation can show a collapsed Governance impact row describing how the relevant methods changed that concrete action. Its user-facing fields follow the request language, and the complete recorded details remain inspectable.
+
 Recorded project goals, constraints, and key decisions stay with the project. Changes to those decisions present a specific diff for your review. You can also configure a test-first preference and code complexity thresholds to reflect your project's requirements.
 
 ## From engineering methods to execution
@@ -79,7 +81,7 @@ For new releases and repository activity, select **Watch → All Activity** at t
 
 The client is free; your chosen provider bills model usage.
 
-The workspace supports local projects and Linux x64 projects connected over SSH, with project files, code diffs, command logs and previews. Remote environment requirements are listed in the Alpha notes below.
+The workspace supports local projects and Linux x64 projects connected over SSH, with project files, code diffs, command logs, previews, and docked interactive terminals. Remote environment requirements are listed in the Alpha notes below.
 
 The installed client supports background checks and downloads for Alpha updates. Once a download is ready, click “Restart to update” to install and reopen the client. Finish or stop active tasks first; ordinary exit does not install an update. Users of the older extracted ZIP must install the first installer release manually.
 
