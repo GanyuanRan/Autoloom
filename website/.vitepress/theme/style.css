@@ -252,7 +252,41 @@ body {
   box-shadow: 0 18px 48px rgba(28, 96, 223, 0.34);
 }
 
+.al-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 22px;
+  border: 1px solid rgba(34, 103, 232, 0.22);
+  border-radius: 12px;
+  color: #1f5fd4;
+  background: rgba(239, 245, 255, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  font-weight: 680;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.al-secondary-button:hover {
+  border-color: rgba(34, 103, 232, 0.42);
+  color: #174fb7;
+  background: #edf4ff;
+  box-shadow: 0 12px 30px rgba(32, 95, 208, 0.12), inset 0 1px 0 #fff;
+  transform: translateY(-2px);
+}
+
+.al-button-arrow {
+  transition: transform 160ms ease;
+}
+
+.al-secondary-button:hover .al-button-arrow {
+  transform: translateX(3px);
+}
+
 .al-primary-button:focus-visible,
+.al-secondary-button:focus-visible,
 .al-site a:focus-visible,
 .al-site summary:focus-visible,
 .al-site video:focus-visible {
@@ -899,18 +933,14 @@ body {
   gap: 22px;
 }
 
-.al-start-card .al-primary-button {
+.al-start-card .al-primary-button,
+.al-start-card .al-secondary-button {
   margin: 20px 0 0;
 }
 
 .al-blue-button {
   color: #fff;
   background: linear-gradient(90deg, #138dec, #5b46f5);
-}
-
-.al-text-link {
-  color: #2267e8;
-  font-weight: 650;
 }
 
 .al-faq-section {
@@ -962,12 +992,24 @@ body {
   gap: 28px;
 }
 
-.al-final-cta .al-primary-button {
+.al-final-cta .al-primary-button,
+.al-final-cta .al-secondary-button {
   margin: 0;
 }
 
-.al-light-link {
-  color: #bed7ff;
+.al-secondary-button-light {
+  border-color: rgba(199, 218, 255, 0.34);
+  color: #e4efff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.al-secondary-button-light:hover {
+  border-color: rgba(211, 226, 255, 0.58);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 30px rgba(3, 13, 40, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .al-footer {
@@ -1229,6 +1271,14 @@ body {
   .al-final-cta > div {
     align-items: flex-start;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .al-start-card .al-primary-button,
+  .al-start-card .al-secondary-button,
+  .al-final-cta .al-primary-button,
+  .al-final-cta .al-secondary-button {
+    width: 100%;
   }
 
   .al-footer nav {
