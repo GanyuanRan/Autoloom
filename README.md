@@ -43,7 +43,7 @@ Recorded project goals, constraints, and key decisions stay with the project. Ch
 
 ## From engineering methods to execution
 
-[Aegis](https://github.com/GanyuanRan/Aegis) is our open-source AI engineering method pack. Autoloom integrates its core governance methods into development, covering change necessity, complexity, causal diagnosis, and delivery review.
+[Aegis](https://autoloom.codes/en/aegis/) ([GitHub](https://github.com/GanyuanRan/Aegis)) is our open-source AI engineering method pack. Autoloom integrates its core governance methods into development, covering change necessity, complexity, causal diagnosis, and delivery review.
 
 Guidance loads as needed. The runtime maintains prerequisites for key actions, task state, and execution evidence—connecting governance to actual work and reducing repeated reminders and manual checks. Reliable delivery still depends on actual verification results.
 

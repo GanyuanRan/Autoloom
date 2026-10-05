@@ -5,7 +5,7 @@ const root = resolve(import.meta.dirname, '..')
 const output = resolve(root, 'website/.dist')
 const release = JSON.parse(await readFile(resolve(root, 'website/.generated/release.json'), 'utf8'))
 const required = [
-  'index.html', 'en/index.html', 'docs/index.html', 'en/docs/index.html',
+  'index.html', 'en/index.html', 'aegis/index.html', 'en/aegis/index.html', 'docs/index.html', 'en/docs/index.html',
   'releases/index.html', 'en/releases/index.html', 'security/index.html',
   'privacy/index.html', 'license/index.html', 'robots.txt', 'sitemap.xml',
   'media/autoloom-demo-zh.mp4', 'media/autoloom-demo-en.mp4',
@@ -27,6 +27,17 @@ const text = (await Promise.all(searchable.map(path => readFile(path, 'utf8'))))
 if (!text.includes('https://autoloom.codes')) throw new Error('Built site has no canonical autoloom.codes identity.')
 if (!text.includes(release.installer.name)) throw new Error('Built site has no validated installer URL.')
 if (text.includes('api.github.com/repos/GanyuanRan/Autoloom/releases')) throw new Error('Built browser assets contain a GitHub Releases API request.')
+
+for (const page of [
+  { path: 'aegis/index.html', canonical: 'https://autoloom.codes/aegis/', alternate: 'https://autoloom.codes/en/aegis/' },
+  { path: 'en/aegis/index.html', canonical: 'https://autoloom.codes/en/aegis/', alternate: 'https://autoloom.codes/aegis/' },
+]) {
+  const html = await readFile(resolve(output, page.path), 'utf8')
+  if (!html.includes(`rel="canonical" href="${page.canonical}"`)) throw new Error(`${page.path} has no matching canonical URL.`)
+  if (!html.includes(`rel="alternate"`) || !html.includes(page.alternate)) throw new Error(`${page.path} has no matching language alternate.`)
+  if (!html.includes('https://github.com/GanyuanRan/Aegis#quick-install')) throw new Error(`${page.path} has no canonical Aegis install link.`)
+  if (!html.includes('"@type":"SoftwareSourceCode"')) throw new Error(`${page.path} has no Aegis structured data.`)
+}
 try {
   await access(resolve(output, 'CNAME'))
   throw new Error('CNAME must remain absent until the production-domain stage.')

@@ -68,9 +68,12 @@ export async function projectSite({ root, release }) {
   const generated = resolve(websiteRoot, '.generated')
   if (!generated.startsWith(websiteRoot + sep)) throw new Error('Generated site path must stay inside website/.')
   await rm(generated, { recursive: true, force: true })
-  await mkdir(resolve(generated, 'en'), { recursive: true })
+  await mkdir(resolve(generated, 'aegis'), { recursive: true })
+  await mkdir(resolve(generated, 'en/aegis'), { recursive: true })
   await writeFile(resolve(generated, 'index.md'), '---\nlayout: false\ntitle: Autoloom\n---\n\n<AutoloomHome locale="zh" />\n', 'utf8')
   await writeFile(resolve(generated, 'en/index.md'), '---\nlayout: false\ntitle: Autoloom\n---\n\n<AutoloomHome locale="en" />\n', 'utf8')
+  await writeFile(resolve(generated, 'aegis/index.md'), '---\nlayout: false\ntitle: Aegis 开源治理工程方法包\ndescription: 为 Coding Agent 提供基线优先、变更必要性、系统化诊断、反熵与证据化交付方法。\n---\n\n<AegisHome locale="zh" />\n', 'utf8')
+  await writeFile(resolve(generated, 'en/aegis/index.md'), '---\nlayout: false\ntitle: Aegis Open-source Governance Engineering Method Pack\ndescription: Baseline-first work, change necessity, systematic diagnosis, anti-entropy, and evidence-backed delivery for Coding Agents.\n---\n\n<AegisHome locale="en" />\n', 'utf8')
   await writeFile(resolve(generated, 'release.json'), JSON.stringify(release, null, 2) + '\n', 'utf8')
 
   for (const page of sitePages) {

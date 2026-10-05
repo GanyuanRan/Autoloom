@@ -45,9 +45,12 @@ export default defineConfig({
   transformHead({ pageData }) {
     const route = routePath(pageData.relativePath)
     const alternate = routePath(counterpart(pageData.relativePath))
+    const aegis = pageData.relativePath === 'aegis/index.md' || pageData.relativePath === 'en/aegis/index.md'
     const zh = pageData.relativePath.startsWith('en/') ? alternate : route
     const en = pageData.relativePath.startsWith('en/') ? route : alternate
-    const image = `${origin}/media/autoloom-demo-${pageData.relativePath.startsWith('en/') ? 'en' : 'zh'}-poster.jpg`
+    const image = aegis
+      ? 'https://raw.githubusercontent.com/GanyuanRan/Aegis/main/assets/aegis-hero.png'
+      : `${origin}/media/autoloom-demo-${pageData.relativePath.startsWith('en/') ? 'en' : 'zh'}-poster.jpg`
     const entries = [
       ['link', { rel: 'canonical', href: `${origin}${route}` }],
       ['link', { rel: 'alternate', hreflang: 'zh-CN', href: `${origin}${zh}` }],
@@ -73,6 +76,17 @@ export default defineConfig({
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       })])
     }
+    if (aegis) {
+      entries.push(['script', { type: 'application/ld+json' }, JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareSourceCode',
+        name: 'Aegis',
+        description: pageData.description,
+        codeRepository: 'https://github.com/GanyuanRan/Aegis',
+        license: 'https://github.com/GanyuanRan/Aegis/blob/main/LICENSE',
+        url: `${origin}${route}`,
+      })])
+    }
     return entries
   },
   locales: {
@@ -82,7 +96,7 @@ export default defineConfig({
       title: 'Autoloom',
       description: '面向 Coding Agent 的治理工程',
       themeConfig: {
-        nav: [{ text: '首页', link: '/' }, { text: '文档', link: '/docs/' }, { text: '版本', link: '/releases/' }, { text: 'English', link: '/en/' }],
+        nav: [{ text: '首页', link: '/' }, { text: 'Aegis', link: '/aegis/' }, { text: '文档', link: '/docs/' }, { text: '版本', link: '/releases/' }, { text: 'English', link: '/en/' }],
         sidebar: { '/docs/': zhSidebar },
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
@@ -99,7 +113,7 @@ export default defineConfig({
       title: 'Autoloom',
       description: 'Governance Engineering for Coding Agents',
       themeConfig: {
-        nav: [{ text: 'Home', link: '/en/' }, { text: 'Docs', link: '/en/docs/' }, { text: 'Releases', link: '/en/releases/' }, { text: '中文', link: '/' }],
+        nav: [{ text: 'Home', link: '/en/' }, { text: 'Aegis', link: '/en/aegis/' }, { text: 'Docs', link: '/en/docs/' }, { text: 'Releases', link: '/en/releases/' }, { text: '中文', link: '/' }],
         sidebar: { '/en/docs/': enSidebar },
         outline: { label: 'On this page' },
       },

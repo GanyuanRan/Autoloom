@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { homeContent } from './home-content.mjs'
+import SiteFooter from './SiteFooter.vue'
+import SiteHeader from './SiteHeader.vue'
 
 const props = defineProps({ locale: { type: String, required: true } })
 const { theme } = useData()
@@ -25,23 +27,7 @@ const current = computed(() => ({
 <template>
   <div class="al-site">
     <a class="al-skip" href="#main">{{ locale === 'en' ? 'Skip to content' : '跳至正文' }}</a>
-    <header class="al-header">
-      <a class="al-brand" :href="link('/')" aria-label="Autoloom">
-        <img :src="media('autoloom-logo.png')" alt="" width="34" height="34">
-        <span>Autoloom</span>
-      </a>
-      <nav :aria-label="locale === 'en' ? 'Main navigation' : '主导航'">
-        <a href="#product">{{ copy.nav.product }}</a>
-        <a href="#governance">{{ copy.nav.governance }}</a>
-        <a :href="link('/docs/')">{{ copy.nav.docs }}</a>
-        <a :href="link('/releases/')">{{ copy.nav.releases }}</a>
-      </nav>
-      <div class="al-header-actions">
-        <a :href="locale === 'en' ? withBase('/') : withBase('/en/')">{{ copy.nav.language }}</a>
-        <a class="al-github" href="https://github.com/GanyuanRan/Autoloom" aria-label="GitHub">GitHub</a>
-        <a class="al-header-download" :href="release.installer.url">{{ copy.nav.download }}</a>
-      </div>
-    </header>
+    <SiteHeader :locale="locale" :copy="copy" :download-url="release.installer.url" :language-href="locale === 'en' ? '/' : '/en/'" home />
 
     <main id="main">
       <section id="product" class="al-hero">
@@ -98,6 +84,23 @@ const current = computed(() => ({
         </div>
       </section>
 
+      <section id="ecosystem" class="al-section al-relationship-section">
+        <div class="al-section-heading al-centered"><p class="al-kicker">{{ copy.relationship.kicker }}</p><h2>{{ copy.relationship.title }}</h2><p>{{ copy.relationship.body }}</p></div>
+        <div class="al-relationship-grid">
+          <article class="al-relationship-card al-aegis-card">
+            <span>{{ copy.relationship.aegis.label }}</span><h3>{{ copy.relationship.aegis.title }}</h3><p>{{ copy.relationship.aegis.body }}</p>
+            <ul><li v-for="item in copy.relationship.aegis.items" :key="item">{{ item }}</li></ul>
+            <a class="al-secondary-button" :href="link('/aegis/')">{{ copy.relationship.aegis.cta }}</a>
+          </article>
+          <article class="al-relationship-card al-runtime-card">
+            <span>{{ copy.relationship.autoloom.label }}</span><h3>{{ copy.relationship.autoloom.title }}</h3><p>{{ copy.relationship.autoloom.body }}</p>
+            <ul><li v-for="item in copy.relationship.autoloom.items" :key="item">{{ item }}</li></ul>
+            <a class="al-primary-button al-blue-button" href="#demo">{{ copy.relationship.autoloom.cta }}</a>
+          </article>
+        </div>
+        <p class="al-relationship-note">{{ copy.relationship.note }}</p>
+      </section>
+
       <section class="al-section al-evidence-section">
         <div class="al-section-heading"><h2>{{ copy.evidence.title }}</h2><p>{{ copy.evidence.body }}</p></div>
         <ol class="al-evidence-flow"><li v-for="([title, body], index) in copy.evidence.items" :key="title"><span>0{{ index + 1 }}</span><h3>{{ title }}</h3><p>{{ body }}</p></li></ol>
@@ -131,6 +134,6 @@ const current = computed(() => ({
       <section class="al-final-cta"><h2>{{ copy.final.title }}</h2><div><a class="al-primary-button" :href="release.installer.url">{{ copy.hero.download }}</a><a class="al-secondary-button al-secondary-button-light" :href="link('/docs/')">{{ copy.final.docs }}</a></div></section>
     </main>
 
-    <footer class="al-footer"><div class="al-brand"><img :src="media('autoloom-logo.png')" alt="" width="28" height="28"><span>Autoloom</span></div><p>{{ copy.footer.truth }}</p><nav><a :href="link('/docs/')">{{ copy.nav.docs }}</a><a :href="link('/releases/')">{{ copy.nav.releases }}</a><a :href="link('/security/')">{{ copy.footer.security }}</a><a :href="link('/privacy/')">{{ copy.footer.privacy }}</a><a :href="link('/license/')">{{ copy.footer.license }}</a><a href="https://github.com/GanyuanRan/Autoloom">GitHub</a></nav><small>autoloom.codes</small></footer>
+    <SiteFooter :locale="locale" :copy="copy" />
   </div>
 </template>

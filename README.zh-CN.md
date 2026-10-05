@@ -43,7 +43,7 @@ Autoloom 在相应环节投递这些方法要求，并检查关键操作的前�
 
 ## 从工程方法到实际执行
 
-[Aegis](https://github.com/GanyuanRan/Aegis) 是我们维护的开源 AI 工程方法包。Autoloom 将其核心治理方法融入开发流程，覆盖变更必要性、复杂度治理、因果诊断与交付复核。
+[Aegis](https://autoloom.codes/aegis/)（[GitHub](https://github.com/GanyuanRan/Aegis)）是我们维护的开源 AI 工程方法包。Autoloom 将其核心治理方法融入开发流程，覆盖变更必要性、复杂度治理、因果诊断与交付复核。
 
 方法指导按需加载；关键操作的前置检查、任务状态与执行证据由运行时维护，让治理要求与真实执行关联，减少用户反复提醒和核对的负担。交付是否可靠，仍以实际验证结果为依据。
 

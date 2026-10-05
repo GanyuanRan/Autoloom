@@ -1,5 +1,5 @@
 const zh = {
-  nav: { product: '产品', governance: '治理工程', docs: '文档', releases: '版本', download: '下载', language: 'EN' },
+  nav: { product: '产品', governance: '治理工程', aegis: 'Aegis', docs: '文档', releases: '版本', download: '下载', language: 'EN' },
   hero: {
     eyebrow: '面向 Coding Agent 的治理工程',
     title: ['让 Coding Agent', '每一次改动，', '都有依据可查。'],
@@ -47,6 +47,26 @@ const zh = {
       ['证据化交付', '区分做过什么与确认了什么。'],
     ],
   },
+  relationship: {
+    kicker: 'Aegis × Autoloom',
+    title: '同一套治理方法，两种使用方式。',
+    body: '选择独立的方法包，让现有 Coding Agent 使用治理工程；或使用已经把治理 checkpoint、轨迹与记录组合进执行过程的 Autoloom。',
+    aegis: {
+      label: 'Open-source Method Pack',
+      title: 'Aegis',
+      body: '把治理方法安装到支持 Skills 的 Coding Agent Host。',
+      items: ['跨 Host 使用', '方法与工作流开源', '由 Aegis 仓库持续演进'],
+      cta: '了解 Aegis',
+    },
+    autoloom: {
+      label: 'Governed Coding Agent',
+      title: 'Autoloom',
+      body: '把方法、执行 checkpoint、完整轨迹和治理记录组合成 Windows 产品。',
+      items: ['执行时自动进入相关判断点', '轨迹与治理记录可回看', '无需另行安装 Aegis'],
+      cta: '查看真实演示',
+    },
+    note: '两者共享治理工程方向，各自保留清楚的产品、安装与版本边界。',
+  },
   evidence: {
     title: '一项改动，留下四层可复核依据。',
     body: '这些信息进入会话记录，可以从结果回到原始执行过程。',
@@ -85,7 +105,7 @@ const zh = {
 }
 
 const en = {
-  nav: { product: 'Product', governance: 'Governance Engineering', docs: 'Docs', releases: 'Releases', download: 'Download', language: '中文' },
+  nav: { product: 'Product', governance: 'Governance Engineering', aegis: 'Aegis', docs: 'Docs', releases: 'Releases', download: 'Download', language: '中文' },
   hero: {
     eyebrow: 'Governance Engineering for Coding Agents',
     title: ['Every change', 'made by a Coding Agent,', 'backed by inspectable evidence.'],
@@ -113,6 +133,26 @@ const en = {
     finding: 'Finding: the change is complete, but there is no actual post-change test result.',
     effect: 'Action effect: run the existing tests and use their output to decide whether the issue is fixed.',
     items: [['Change necessity', 'Avoid changing code for its own sake.'], ['Systematic diagnosis', 'Make the next step answer the observed cause.'], ['Structural entropy control', 'Limit unrelated changes and duplicate owners.'], ['Evidence-backed delivery', 'Separate what ran from what it established.']],
+  },
+  relationship: {
+    kicker: 'Aegis × Autoloom',
+    title: 'One governance approach. Two ways to use it.',
+    body: 'Add a standalone method pack to an existing Coding Agent, or use Autoloom with governance checkpoints, trajectory, and records integrated into execution.',
+    aegis: {
+      label: 'Open-source Method Pack',
+      title: 'Aegis',
+      body: 'Install governance methods in Coding Agent hosts that support Skills.',
+      items: ['Works across hosts', 'Open methods and workflows', 'Evolves in the Aegis repository'],
+      cta: 'Explore Aegis',
+    },
+    autoloom: {
+      label: 'Governed Coding Agent',
+      title: 'Autoloom',
+      body: 'Combines methods, execution checkpoints, full trajectory, and governance records in a Windows product.',
+      items: ['Enters relevant judgment points during execution', 'Keeps trajectory and governance records inspectable', 'No separate Aegis installation'],
+      cta: 'Watch the real demo',
+    },
+    note: 'Both follow the same Governance Engineering direction while keeping product, installation, and release ownership clear.',
   },
   evidence: {
     title: 'One change leaves four layers of reviewable evidence.',
