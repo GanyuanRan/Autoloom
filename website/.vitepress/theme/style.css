@@ -256,7 +256,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   min-height: 56px;
   padding: 0 22px;
   border: 1px solid rgba(34, 103, 232, 0.22);
@@ -275,14 +274,6 @@ body {
   background: #edf4ff;
   box-shadow: 0 12px 30px rgba(32, 95, 208, 0.12), inset 0 1px 0 #fff;
   transform: translateY(-2px);
-}
-
-.al-button-arrow {
-  transition: transform 160ms ease;
-}
-
-.al-secondary-button:hover .al-button-arrow {
-  transform: translateX(3px);
 }
 
 .al-primary-button:focus-visible,

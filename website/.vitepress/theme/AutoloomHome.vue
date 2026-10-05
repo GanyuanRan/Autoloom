@@ -123,12 +123,12 @@ const current = computed(() => ({
 
       <section class="al-section al-boundary-section">
         <div><div class="al-section-heading"><h2>{{ copy.boundaries.title }}</h2></div><dl class="al-boundary-list"><template v-for="([term, description]) in copy.boundaries.items" :key="term"><dt>{{ term }}</dt><dd>{{ description }}</dd></template></dl></div>
-        <div class="al-start-card"><h2>{{ copy.start.title }}</h2><ol><li v-for="(step, index) in copy.start.steps" :key="step"><span>{{ index + 1 }}</span>{{ step }}</li></ol><p>{{ copy.start.cost }}</p><div><a class="al-primary-button al-blue-button" :href="release.installer.url">{{ copy.hero.download }}</a><a class="al-secondary-button" :href="link('/docs/getting-started')"><span>{{ copy.start.guide }}</span><span class="al-button-arrow" aria-hidden="true">→</span></a></div></div>
+        <div class="al-start-card"><h2>{{ copy.start.title }}</h2><ol><li v-for="(step, index) in copy.start.steps" :key="step"><span>{{ index + 1 }}</span>{{ step }}</li></ol><p>{{ copy.start.cost }}</p><div><a class="al-primary-button al-blue-button" :href="release.installer.url">{{ copy.hero.download }}</a><a class="al-secondary-button" :href="link('/docs/getting-started')">{{ copy.start.guide }}</a></div></div>
       </section>
 
       <section class="al-section al-faq-section"><div class="al-section-heading"><h2>{{ copy.faq.title }}</h2></div><div class="al-faq"><details v-for="([question, answer], index) in copy.faq.items" :key="question" :open="index === 1"><summary>{{ question }}</summary><p>{{ answer }}</p></details></div></section>
 
-      <section class="al-final-cta"><h2>{{ copy.final.title }}</h2><div><a class="al-primary-button" :href="release.installer.url">{{ copy.hero.download }}</a><a class="al-secondary-button al-secondary-button-light" :href="link('/docs/')"><span>{{ copy.final.docs }}</span><span class="al-button-arrow" aria-hidden="true">→</span></a></div></section>
+      <section class="al-final-cta"><h2>{{ copy.final.title }}</h2><div><a class="al-primary-button" :href="release.installer.url">{{ copy.hero.download }}</a><a class="al-secondary-button al-secondary-button-light" :href="link('/docs/')">{{ copy.final.docs }}</a></div></section>
     </main>
 
     <footer class="al-footer"><div class="al-brand"><img :src="media('autoloom-logo.png')" alt="" width="28" height="28"><span>Autoloom</span></div><p>{{ copy.footer.truth }}</p><nav><a :href="link('/docs/')">{{ copy.nav.docs }}</a><a :href="link('/releases/')">{{ copy.nav.releases }}</a><a :href="link('/security/')">{{ copy.footer.security }}</a><a :href="link('/privacy/')">{{ copy.footer.privacy }}</a><a :href="link('/license/')">{{ copy.footer.license }}</a><a href="https://github.com/GanyuanRan/Autoloom">GitHub</a></nav><small>autoloom.codes</small></footer>
