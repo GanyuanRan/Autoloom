@@ -1,12 +1,16 @@
 <h1 align="center"><img src="assets/autoloom-logo.png" alt="" width="40" height="40" align="texttop" /> Autoloom</h1>
 
-<p align="center"><strong>用创意编织现实</strong></p>
+<p align="center"><strong>面向 Coding Agent 的治理工程</strong></p>
 
 <p align="center">免费桌面客户端 · 自选模型 · Windows x64 Alpha</p>
 
-<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
+<p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/#demo"><img src="website/public/media/autoloom-demo-zh-poster.jpg" alt="观看 Autoloom 治理工程演示" width="900" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/#demo"><strong>观看 40 秒真实任务演示 →</strong></a></p>
 
 <table>
   <tr><th width="50%">对话界面</th><th width="50%">设置界面</th></tr>
@@ -22,7 +26,7 @@ Autoloom 将 Aegis 的核心治理方法融入开发运行时：先判断改动�
 
 减少你反复提醒 Agent 先查原因、避免无谓复杂度、说明实际验证结果的负担。
 
-## 把哲科思维落到每一次关键判断
+## 把工程思维落到每一次关键判断
 
 | 方法 | 在开发流程中做什么 |
 | --- | --- |

@@ -1,0 +1,22 @@
+{
+  "name": "autoloom-public-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "site:dev": "node scripts/build-site.mjs --dev",
+    "site:build": "node scripts/build-site.mjs",
+    "site:build:fixture": "node scripts/build-site.mjs --fixture tests/fixtures/releases.valid.json",
+    "site:verify": "node scripts/verify-site.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "pnpm test && pnpm site:build:fixture && pnpm site:verify"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "vue": "3.5.22"
+  }
+}

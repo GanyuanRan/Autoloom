@@ -1,0 +1,22 @@
+[
+  {
+    "tag_name": "v0.1.0-alpha.10",
+    "name": "Autoloom 0.1.0-alpha.10",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-04T07:17:29Z",
+    "html_url": "https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.0-alpha.10",
+    "assets": [
+      {
+        "name": "Autoloom-0.1.0-alpha.10-win-x64.exe",
+        "size": 259587310,
+        "browser_download_url": "https://github.com/GanyuanRan/Autoloom/releases/download/v0.1.0-alpha.10/Autoloom-0.1.0-alpha.10-win-x64.exe"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 371,
+        "browser_download_url": "https://github.com/GanyuanRan/Autoloom/releases/download/v0.1.0-alpha.10/SHA256SUMS"
+      }
+    ]
+  }
+]

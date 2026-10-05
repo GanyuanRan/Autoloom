@@ -1,0 +1,71 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pages.yml'
+      - 'website/**'
+      - 'scripts/build-site.mjs'
+      - 'scripts/project-site.mjs'
+      - 'scripts/release-data.mjs'
+      - 'tests/**'
+      - 'docs/**'
+      - 'CHANGELOG*.md'
+      - 'SECURITY*.md'
+      - 'DATA_AND_PRIVACY*.md'
+      - 'LICENSE.md'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  release:
+    types: [published, edited, released]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - id: pages
+        uses: actions/configure-pages@v6
+      - name: Build and verify website
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SITE_BASE: ${{ steps.pages.outputs.base_path }}/
+        run: pnpm site:build && pnpm site:verify
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: website/.dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

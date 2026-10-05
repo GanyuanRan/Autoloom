@@ -1,12 +1,16 @@
 <h1 align="center"><img src="assets/autoloom-logo.png" alt="" width="40" height="40" align="texttop" /> Autoloom</h1>
 
-<p align="center"><strong>Weave Creativity into Reality</strong></p>
+<p align="center"><strong>Governance Engineering for Coding Agents</strong></p>
 
 <p align="center">Free desktop client · Your choice of model · Windows x64 Alpha</p>
 
-<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases">Download Alpha</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
+<p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Alpha</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/en/#demo"><img src="website/public/media/autoloom-demo-en-poster.jpg" alt="Watch the Autoloom Governance Engineering demo" width="900" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/en/#demo"><strong>Watch the 40-second real-task demo →</strong></a></p>
 
 <table>
   <tr><th width="50%">Conversation</th><th width="50%">Settings</th></tr>
