@@ -45,15 +45,15 @@ const current = computed(() => ({
         <div class="al-product-stage">
           <figure class="al-stage-card al-stage-impact">
             <figcaption>{{ copy.hero.stages[0] }}</figcaption>
-            <div class="al-stage-viewport"><img :src="current.impact" :alt="copy.alt.impact"></div>
+            <img :src="current.impact" :alt="copy.alt.impact">
           </figure>
           <figure class="al-stage-card al-stage-trajectory">
             <figcaption>{{ copy.hero.stages[1] }}</figcaption>
-            <div class="al-stage-viewport"><img :src="current.trajectory" :alt="copy.alt.trajectory"></div>
+            <img :src="current.trajectory" :alt="copy.alt.trajectory">
           </figure>
           <figure class="al-stage-card al-stage-record">
             <figcaption>{{ copy.hero.stages[2] }}</figcaption>
-            <div class="al-stage-viewport"><img :src="current.record" :alt="copy.alt.record"></div>
+            <img :src="current.record" :alt="copy.alt.record">
           </figure>
           <a class="al-play" href="#demo" :aria-label="copy.hero.demo"><span aria-hidden="true">▶</span><small>{{ copy.hero.demo }}</small></a>
           <ol class="al-loop">

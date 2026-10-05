@@ -295,20 +295,10 @@ body {
   box-shadow: 0 18px 46px rgba(1, 7, 27, 0.52);
 }
 
-.al-stage-viewport {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: var(--crop-ratio);
-  border-radius: 11px;
-}
-
-.al-stage-viewport img {
-  position: absolute;
-  top: var(--crop-top);
-  left: var(--crop-left);
+.al-stage-card img {
   display: block;
-  width: var(--crop-width);
-  max-width: none;
+  width: 100%;
+  border-radius: 11px;
 }
 
 .al-stage-card figcaption {
@@ -328,29 +318,17 @@ body {
 }
 
 .al-stage-impact {
-  --crop-ratio: 700 / 260;
-  --crop-width: 292.571%;
-  --crop-left: -54%;
-  --crop-top: -118.846%;
   z-index: 3;
   top: 64px;
   left: 24px;
-  width: 46%;
-}
-
-.al-stage-impact:lang(en) {
-  --crop-top: -91.923%;
+  width: 41%;
 }
 
 .al-stage-trajectory {
-  --crop-ratio: 1220 / 420;
-  --crop-width: 167.869%;
-  --crop-left: -28.689%;
-  --crop-top: -29.762%;
   z-index: 2;
-  top: 178px;
-  left: 30%;
-  width: 65%;
+  top: 140px;
+  left: 24%;
+  width: 64%;
 }
 
 .al-stage-trajectory figcaption {
@@ -359,52 +337,51 @@ body {
 }
 
 .al-stage-record {
-  --crop-ratio: 1080 / 370;
-  --crop-width: 189.63%;
-  --crop-left: -33.333%;
-  --crop-top: -40.541%;
   z-index: 4;
-  top: 336px;
+  top: 305px;
   right: 14px;
-  width: 49%;
+  width: 38%;
 }
 
 .al-play {
   position: absolute;
-  bottom: 104px;
-  left: 50%;
+  z-index: 6;
+  top: 43%;
+  left: 52%;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 18px 8px 8px;
-  border: 1px solid rgba(120, 170, 255, 0.28);
-  border-radius: 999px;
+  flex-direction: column;
+  gap: 9px;
   color: #fff;
-  background: rgba(8, 18, 45, 0.64);
-  backdrop-filter: blur(10px);
-  transform: translateX(-50%);
-  transition: border-color 160ms, background 160ms;
+  transform: translate(-50%, -50%);
 }
 
-.al-play:hover {
+.al-play:hover > span {
   border-color: rgba(94, 194, 255, 0.75);
   background: rgba(20, 47, 91, 0.78);
 }
 
 .al-play > span {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 76px;
+  height: 76px;
   place-items: center;
-  padding-left: 3px;
-  border: 1px solid rgba(110, 207, 255, 0.4);
+  padding-left: 5px;
+  border: 1px solid rgba(173, 210, 255, 0.55);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(12, 114, 192, 0.64), rgba(81, 50, 162, 0.64));
-  font-size: 16px;
+  background: rgba(8, 18, 45, 0.68);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  font-size: 26px;
+  transition: border-color 160ms, background 160ms;
 }
 
 .al-play small {
-  font-size: 14px;
+  padding: 5px 11px;
+  border: 1px solid rgba(173, 210, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(13, 24, 55, 0.82);
+  font-size: 13px;
   font-weight: 650;
   white-space: nowrap;
 }
@@ -1131,6 +1108,7 @@ body {
     left: auto;
     width: 100%;
     min-width: 0;
+    grid-column: 1;
   }
 
   .al-stage-trajectory {
@@ -1152,16 +1130,20 @@ body {
   }
 
   .al-play {
-    position: static;
-    grid-row: 4;
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-row: 2;
+    grid-column: 1;
     justify-self: center;
+    align-self: center;
     transform: none;
   }
 
   .al-loop {
     position: static;
     grid-template-columns: 1fr 1fr;
-    grid-row: 5;
+    grid-row: 4;
     margin-top: 6px;
   }
 
