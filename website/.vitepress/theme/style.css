@@ -364,6 +364,11 @@ body {
   width: 58%;
 }
 
+.al-stage-trajectory figcaption {
+  right: 18px;
+  left: auto;
+}
+
 .al-stage-record {
   z-index: 4;
   top: 286px;
@@ -1131,6 +1136,11 @@ body {
   .al-stage-trajectory {
     z-index: 5;
     grid-row: 1;
+  }
+
+  .al-stage-trajectory figcaption {
+    right: auto;
+    left: 18px;
   }
 
   .al-stage-impact {
