@@ -90,7 +90,7 @@ onBeforeUnmount(() => dispose())
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(3, 7, 17, 0.72) 0%, rgba(3, 7, 17, 0.44) 28%, transparent 58%),
+    linear-gradient(90deg, rgba(3, 7, 17, 0.86) 0%, rgba(3, 7, 17, 0.64) 30%, rgba(3, 7, 17, 0.18) 46%, transparent 64%),
     linear-gradient(0deg, rgba(3, 7, 17, 0.28), transparent 20%, transparent 78%, rgba(3, 7, 17, 0.24));
 }
 .governance-motion-control {

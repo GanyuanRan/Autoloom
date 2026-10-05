@@ -26,7 +26,7 @@ const current = computed(() => ({
 </script>
 
 <template>
-  <div class="al-site">
+  <div class="al-site" :lang="locale">
     <a class="al-skip" href="#main">{{ locale === 'en' ? 'Skip to content' : '跳至正文' }}</a>
     <SiteHeader :locale="locale" :copy="copy" :download-url="release.installer.url" :language-href="locale === 'en' ? '/' : '/en/'" home />
 
@@ -43,20 +43,19 @@ const current = computed(() => ({
         </div>
 
         <div class="al-product-stage">
-          <div class="al-stage-line" aria-hidden="true" />
           <figure class="al-stage-card al-stage-impact">
             <figcaption>{{ copy.hero.stages[0] }}</figcaption>
-            <img :src="current.impact" :alt="copy.alt.impact">
+            <div class="al-stage-viewport"><img :src="current.impact" :alt="copy.alt.impact"></div>
           </figure>
           <figure class="al-stage-card al-stage-trajectory">
             <figcaption>{{ copy.hero.stages[1] }}</figcaption>
-            <img :src="current.trajectory" :alt="copy.alt.trajectory">
-            <a class="al-play" href="#demo" :aria-label="copy.hero.demo"><span aria-hidden="true">▶</span><small>{{ copy.hero.demo }}</small></a>
+            <div class="al-stage-viewport"><img :src="current.trajectory" :alt="copy.alt.trajectory"></div>
           </figure>
           <figure class="al-stage-card al-stage-record">
             <figcaption>{{ copy.hero.stages[2] }}</figcaption>
-            <img :src="current.record" :alt="copy.alt.record">
+            <div class="al-stage-viewport"><img :src="current.record" :alt="copy.alt.record"></div>
           </figure>
+          <a class="al-play" href="#demo" :aria-label="copy.hero.demo"><span aria-hidden="true">▶</span><small>{{ copy.hero.demo }}</small></a>
           <ol class="al-loop">
             <li v-for="([title, body], index) in copy.loop" :key="title"><span class="al-loop-icon">{{ index + 1 }}</span><span><strong>{{ title }}</strong><small>{{ body }}</small></span></li>
           </ol>

@@ -108,7 +108,7 @@ const en = {
   nav: { product: 'Product', governance: 'Governance Engineering', aegis: 'Aegis', docs: 'Docs', releases: 'Releases', download: 'Download', language: '中文' },
   hero: {
     eyebrow: 'Governance Engineering for Coding Agents',
-    title: ['Every change', 'made by a Coding Agent,', 'backed by inspectable evidence.'],
+    title: ['Every change', 'made by a Coding\u00a0Agent,', 'backed by inspectable evidence.'],
     definition: 'Weave goals, constraints, engineering methods, action judgments, and verification evidence into agent execution.',
     practical: 'Judge before acting, change the next step during execution, and retain reviewable facts and unknowns at delivery.',
     download: 'Download for Windows',

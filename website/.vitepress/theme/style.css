@@ -177,6 +177,14 @@ body {
   display: block;
 }
 
+.al-site:lang(en) .al-hero h1 {
+  font-size: clamp(44px, 2.8vw, 54px);
+}
+
+.al-site:lang(en) .al-hero-copy {
+  padding-bottom: 64px;
+}
+
 .al-gradient-text {
   width: fit-content;
   color: transparent;
@@ -272,22 +280,9 @@ body {
   align-self: center;
   min-height: 650px;
   margin-top: 10px;
-  border: 1px solid rgba(66, 150, 255, 0.45);
+  border: 1px solid rgba(66, 150, 255, 0.12);
   border-radius: 22px;
-  background: linear-gradient(150deg, rgba(8, 27, 67, 0.18), rgba(8, 13, 37, 0.4));
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 35px 100px rgba(0, 0, 0, 0.25);
-}
-
-.al-stage-line {
-  position: absolute;
-  top: 30px;
-  right: 70px;
-  left: 70px;
-  height: 300px;
-  border-top: 2px solid rgba(63, 173, 255, 0.78);
-  border-right: 2px solid rgba(130, 74, 255, 0.8);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 8px rgba(46, 140, 255, 0.7));
+  background: linear-gradient(150deg, rgba(8, 27, 67, 0.05), rgba(8, 13, 37, 0.14));
 }
 
 .al-stage-card {
@@ -300,10 +295,20 @@ body {
   box-shadow: 0 18px 46px rgba(1, 7, 27, 0.52);
 }
 
-.al-stage-card img {
-  display: block;
-  width: 100%;
+.al-stage-viewport {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--crop-ratio);
   border-radius: 11px;
+}
+
+.al-stage-viewport img {
+  position: absolute;
+  top: var(--crop-top);
+  left: var(--crop-left);
+  display: block;
+  width: var(--crop-width);
+  max-width: none;
 }
 
 .al-stage-card figcaption {
@@ -323,17 +328,29 @@ body {
 }
 
 .al-stage-impact {
+  --crop-ratio: 700 / 260;
+  --crop-width: 292.571%;
+  --crop-left: -54%;
+  --crop-top: -118.846%;
   z-index: 3;
   top: 64px;
   left: 24px;
-  width: 39%;
+  width: 46%;
+}
+
+.al-stage-impact:lang(en) {
+  --crop-top: -91.923%;
 }
 
 .al-stage-trajectory {
+  --crop-ratio: 1220 / 420;
+  --crop-width: 167.869%;
+  --crop-left: -28.689%;
+  --crop-top: -29.762%;
   z-index: 2;
-  top: 135px;
-  left: 26%;
-  width: 58%;
+  top: 178px;
+  left: 30%;
+  width: 65%;
 }
 
 .al-stage-trajectory figcaption {
@@ -342,44 +359,54 @@ body {
 }
 
 .al-stage-record {
+  --crop-ratio: 1080 / 370;
+  --crop-width: 189.63%;
+  --crop-left: -33.333%;
+  --crop-top: -40.541%;
   z-index: 4;
-  top: 286px;
+  top: 336px;
   right: 14px;
-  width: 37%;
+  width: 49%;
 }
 
 .al-play {
   position: absolute;
-  z-index: 6;
-  top: 49%;
-  left: 52%;
+  bottom: 104px;
+  left: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
+  padding: 8px 18px 8px 8px;
+  border: 1px solid rgba(120, 170, 255, 0.28);
+  border-radius: 999px;
   color: #fff;
-  transform: translate(-50%, -50%);
+  background: rgba(8, 18, 45, 0.64);
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+  transition: border-color 160ms, background 160ms;
+}
+
+.al-play:hover {
+  border-color: rgba(94, 194, 255, 0.75);
+  background: rgba(20, 47, 91, 0.78);
 }
 
 .al-play > span {
   display: grid;
-  width: 76px;
-  height: 76px;
+  width: 40px;
+  height: 40px;
   place-items: center;
-  padding-left: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding-left: 3px;
+  border: 1px solid rgba(110, 207, 255, 0.4);
   border-radius: 50%;
-  background: rgba(8, 18, 45, 0.62);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(10px);
-  font-size: 26px;
+  background: linear-gradient(135deg, rgba(12, 114, 192, 0.64), rgba(81, 50, 162, 0.64));
+  font-size: 16px;
 }
 
 .al-play small {
-  padding: 5px 11px;
-  border-radius: 999px;
-  background: rgba(13, 24, 55, 0.78);
+  font-size: 14px;
   font-weight: 650;
+  white-space: nowrap;
 }
 
 .al-loop {
@@ -1030,7 +1057,8 @@ body {
     padding: 132px 40px 70px;
   }
 
-  .al-hero-copy {
+  .al-hero-copy,
+  .al-site:lang(en) .al-hero-copy {
     max-width: 800px;
     padding-bottom: 20px;
   }
@@ -1107,7 +1135,7 @@ body {
 
   .al-stage-trajectory {
     z-index: 5;
-    grid-row: 1;
+    grid-row: 2;
   }
 
   .al-stage-trajectory figcaption {
@@ -1116,21 +1144,24 @@ body {
   }
 
   .al-stage-impact {
-    grid-row: 2;
+    grid-row: 1;
   }
 
   .al-stage-record {
     grid-row: 3;
   }
 
-  .al-stage-line {
-    display: none;
+  .al-play {
+    position: static;
+    grid-row: 4;
+    justify-self: center;
+    transform: none;
   }
 
   .al-loop {
     position: static;
     grid-template-columns: 1fr 1fr;
-    grid-row: 4;
+    grid-row: 5;
     margin-top: 6px;
   }
 
