@@ -4,6 +4,7 @@ import { useData, withBase } from 'vitepress'
 import { homeContent } from './home-content.mjs'
 import SiteFooter from './SiteFooter.vue'
 import SiteHeader from './SiteHeader.vue'
+import GovernanceBackdrop from './GovernanceBackdrop.vue'
 
 const props = defineProps({ locale: { type: String, required: true } })
 const { theme } = useData()
@@ -31,7 +32,7 @@ const current = computed(() => ({
 
     <main id="main">
       <section id="product" class="al-hero">
-        <div class="al-hero-glow" aria-hidden="true" />
+        <GovernanceBackdrop :locale="locale" variant="weave" />
         <div class="al-hero-copy">
           <p class="al-eyebrow">{{ copy.hero.eyebrow }}</p>
           <h1><span>{{ copy.hero.title[0] }}</span><span>{{ copy.hero.title[1] }}</span><span class="al-gradient-text">{{ copy.hero.title[2] }}</span></h1>

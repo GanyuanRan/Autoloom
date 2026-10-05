@@ -5,6 +5,7 @@ import { aegisContent } from './aegis-content.mjs'
 import { homeContent } from './home-content.mjs'
 import SiteFooter from './SiteFooter.vue'
 import SiteHeader from './SiteHeader.vue'
+import GovernanceBackdrop from './GovernanceBackdrop.vue'
 
 const props = defineProps({ locale: { type: String, required: true } })
 const { theme } = useData()
@@ -24,6 +25,7 @@ const install = `${repository}#quick-install`
 
     <main id="main">
       <section id="product" class="ag-hero">
+        <GovernanceBackdrop :locale="locale" variant="converge" />
         <div class="ag-hero-copy">
           <p class="al-eyebrow">{{ copy.hero.eyebrow }}</p>
           <h1><span>{{ copy.hero.title[0] }}</span><span class="al-gradient-text">{{ copy.hero.title[1] }}</span><span class="al-gradient-text">{{ copy.hero.title[2] }}</span></h1>

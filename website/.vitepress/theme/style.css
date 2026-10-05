@@ -128,45 +128,17 @@ body {
   overflow: hidden;
   color: #f9fbff;
   background:
-    linear-gradient(rgba(58, 103, 197, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 103, 197, 0.07) 1px, transparent 1px),
-    radial-gradient(circle at 55% -20%, rgba(35, 122, 255, 0.48), transparent 41%),
-    radial-gradient(circle at 88% 65%, rgba(124, 58, 237, 0.42), transparent 33%),
-    linear-gradient(135deg, #030b1d 0%, #07142f 52%, #091132 100%);
-  background-size: 48px 48px, 48px 48px, auto, auto, auto;
+    radial-gradient(ellipse at 75% 15%, rgba(13, 65, 110, 0.25), transparent 50%),
+    radial-gradient(ellipse at 85% 95%, rgba(58, 21, 98, 0.26), transparent 44%),
+    #030711;
 }
 
-.al-hero::before,
-.al-hero::after {
-  position: absolute;
-  z-index: -1;
-  width: 1100px;
-  height: 290px;
-  border: 1px solid rgba(61, 157, 255, 0.45);
-  border-radius: 50%;
-  content: "";
-  filter: drop-shadow(0 0 22px rgba(31, 136, 255, 0.4));
-  transform: rotate(-7deg);
-}
-
-.al-hero::before {
-  right: -180px;
-  bottom: -100px;
-  box-shadow: inset 0 30px 70px rgba(31, 122, 255, 0.12);
-}
-
-.al-hero::after {
-  right: -60px;
-  bottom: -190px;
-  border-color: rgba(137, 63, 255, 0.5);
-}
-
-.al-hero-glow {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(128deg, transparent 34%, rgba(0, 132, 255, 0.22) 48%, transparent 61%);
-  clip-path: polygon(50% 0, 73% 0, 52% 58%, 18% 100%, 8% 100%, 41% 53%);
+.al-hero-copy,
+.al-product-stage,
+.ag-hero-copy,
+.ag-hero-system {
+  position: relative;
+  z-index: 1;
 }
 
 .al-hero-copy {
@@ -195,7 +167,7 @@ body {
 
 .al-hero h1 {
   margin: 0;
-  font-size: clamp(52px, 4.1vw, 78px);
+  font-size: clamp(50px, 3.8vw, 72px);
   font-weight: 780;
   line-height: 1.14;
   letter-spacing: -0.055em;
@@ -302,7 +274,7 @@ body {
   margin-top: 10px;
   border: 1px solid rgba(66, 150, 255, 0.45);
   border-radius: 22px;
-  background: linear-gradient(150deg, rgba(8, 27, 67, 0.52), rgba(8, 13, 37, 0.7));
+  background: linear-gradient(150deg, rgba(8, 27, 67, 0.18), rgba(8, 13, 37, 0.4));
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 35px 100px rgba(0, 0, 0, 0.25);
 }
 
@@ -1414,26 +1386,9 @@ body {
   overflow: hidden;
   color: #fff;
   background:
-    linear-gradient(rgba(56, 116, 210, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 116, 210, 0.07) 1px, transparent 1px),
-    radial-gradient(circle at 72% 20%, rgba(22, 153, 255, 0.32), transparent 31%),
-    radial-gradient(circle at 86% 76%, rgba(139, 75, 246, 0.36), transparent 32%),
-    linear-gradient(132deg, #020a1b, #071735 58%, #11133b);
-  background-size: 52px 52px, 52px 52px, auto, auto, auto;
-}
-
-.ag-hero::after {
-  position: absolute;
-  z-index: -1;
-  right: -140px;
-  bottom: -310px;
-  width: 970px;
-  height: 640px;
-  border: 1px solid rgba(67, 171, 255, 0.35);
-  border-radius: 50%;
-  box-shadow: 0 0 90px rgba(86, 75, 255, 0.16);
-  content: "";
-  transform: rotate(-12deg);
+    radial-gradient(ellipse at 78% 20%, rgba(19, 67, 105, 0.28), transparent 50%),
+    radial-gradient(ellipse at 84% 92%, rgba(58, 21, 98, 0.28), transparent 44%),
+    #030711;
 }
 
 .ag-hero-copy {
@@ -1443,7 +1398,7 @@ body {
 
 .ag-hero h1 {
   margin: 0;
-  font-size: clamp(54px, 4.8vw, 82px);
+  font-size: clamp(54px, 4.35vw, 74px);
   font-weight: 780;
   line-height: 1.1;
   letter-spacing: -0.055em;
@@ -1498,7 +1453,7 @@ body {
   min-height: 520px;
   border: 1px solid rgba(80, 166, 255, 0.33);
   border-radius: 28px;
-  background: rgba(5, 20, 52, 0.52);
+  background: rgba(5, 20, 52, 0.26);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.06), 0 35px 100px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(14px);
 }
