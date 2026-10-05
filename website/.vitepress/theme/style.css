@@ -280,9 +280,10 @@ body {
   align-self: center;
   min-height: 650px;
   margin-top: 10px;
-  border: 1px solid rgba(66, 150, 255, 0.12);
+  border: 1px solid rgba(66, 150, 255, 0.28);
   border-radius: 22px;
-  background: linear-gradient(150deg, rgba(8, 27, 67, 0.05), rgba(8, 13, 37, 0.14));
+  background: linear-gradient(150deg, rgba(8, 27, 67, 0.82), rgba(8, 13, 37, 0.9));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 24px 70px rgba(0, 0, 0, 0.22);
 }
 
 .al-stage-card {

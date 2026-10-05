@@ -57,7 +57,7 @@ export function createGovernanceField(canvas, variant) {
     const flow = (clock * 0.04 + bundle * 0.36 + 0.62) % 1
     const distance = Math.min(Math.abs(u - flow), 1 - Math.abs(u - flow))
     const reflection = Math.pow(Math.max(0, Math.cos(u * 5.6 - clock * 0.09 + bundle * 1.4 - 0.8)), 12)
-    return Math.exp(-Math.pow(distance / 0.072, 2)) * 0.7 + reflection * 0.42
+    return Math.exp(-Math.pow(distance / 0.085, 2)) * 0.7 + reflection * 0.45
   }
 
   function drawSurface(bundle, clock, samples, faces) {
@@ -83,8 +83,8 @@ export function createGovernanceField(canvas, variant) {
         const u = step / 24
         const violet = clamp((u - 0.35) * 1.7 + face.bundle * 0.12)
         const light = sheen(u, face.bundle, clock) * face.polish
-        const alpha = (0.16 + light * 0.6) * clamp((face.depth - 0.62) * 2.2) * Math.sin(u * Math.PI)
-        gradient.addColorStop(u, `rgba(${Math.round(37 + violet * 88 + light * 140)},${Math.round(138 - violet * 62 + light * 116)},255,${alpha})`)
+        const alpha = (0.16 + light * 0.64) * clamp((face.depth - 0.62) * 2.2) * Math.sin(u * Math.PI)
+        gradient.addColorStop(u, `rgba(${Math.round(37 + violet * 88 + light * 178)},${Math.round(138 - violet * 62 + light * 138)},255,${alpha})`)
       }
       context.fillStyle = gradient
       context.beginPath()
