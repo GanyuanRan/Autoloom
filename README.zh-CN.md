@@ -8,9 +8,11 @@
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
-<p align="center"><a href="https://autoloom.codes/#stage-panel"><img src="website/public/media/autoloom-demo-zh-poster.jpg" alt="观看 Autoloom 治理工程演示" width="900" /></a></p>
+<p align="center"><strong>40 秒真实任务演示</strong></p>
 
-<p align="center"><a href="https://autoloom.codes/#stage-panel"><strong>观看 40 秒真实任务演示 →</strong></a></p>
+https://github.com/user-attachments/assets/65035e92-dc4d-43db-b604-021529dac6cf
+
+<p align="center"><a href="https://autoloom.codes/#stage-panel">在官网观看 →</a></p>
 
 <table>
   <tr><th width="50%">对话界面</th><th width="50%">设置界面</th></tr>

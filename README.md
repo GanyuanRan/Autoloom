@@ -8,9 +8,11 @@
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
-<p align="center"><a href="https://autoloom.codes/en/#stage-panel"><img src="website/public/media/autoloom-demo-en-poster.jpg" alt="Watch the Autoloom Governance Engineering demo" width="900" /></a></p>
+<p align="center"><strong>40-second real-task demo</strong></p>
 
-<p align="center"><a href="https://autoloom.codes/en/#stage-panel"><strong>Watch the 40-second real-task demo →</strong></a></p>
+https://github.com/user-attachments/assets/7a5f00f4-2761-452f-a122-0ee6ef01c3f0
+
+<p align="center"><a href="https://autoloom.codes/en/#stage-panel">Watch on the website →</a></p>
 
 <table>
   <tr><th width="50%">Conversation</th><th width="50%">Settings</th></tr>
