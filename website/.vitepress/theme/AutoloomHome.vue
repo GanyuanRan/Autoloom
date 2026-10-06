@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { homeContent } from './home-content.mjs'
 import SiteFooter from './SiteFooter.vue'
@@ -23,6 +23,26 @@ const current = computed(() => ({
   video: localized('autoloom-demo-zh.mp4', 'autoloom-demo-en.mp4'),
   poster: localized('autoloom-demo-zh-poster.jpg', 'autoloom-demo-en-poster.jpg'),
 }))
+
+const activeStage = ref(0)
+const activeImage = computed(() => {
+  if (activeStage.value === 0) return { src: current.value.impact, alt: copy.value.alt.impact }
+  if (activeStage.value === 1) return { src: current.value.trajectory, alt: copy.value.alt.trajectory }
+  return { src: current.value.record, alt: copy.value.alt.record }
+})
+
+function onTabKeydown(event, index) {
+  const count = copy.value.hero.stages.length
+  let next = index
+  if (event.key === 'ArrowRight') next = (index + 1) % count
+  else if (event.key === 'ArrowLeft') next = (index - 1 + count) % count
+  else if (event.key === 'Home') next = 0
+  else if (event.key === 'End') next = count - 1
+  else return
+  event.preventDefault()
+  activeStage.value = next
+  document.getElementById(`stage-tab-${next}`)?.focus()
+}
 </script>
 
 <template>
@@ -33,29 +53,78 @@ const current = computed(() => ({
     <main id="main">
       <section id="product" class="al-hero">
         <GovernanceBackdrop :locale="locale" variant="weave" />
-        <div class="al-hero-copy">
-          <p class="al-eyebrow">{{ copy.hero.eyebrow }}</p>
-          <h1><span>{{ copy.hero.title[0] }}</span><span>{{ copy.hero.title[1] }}</span><span class="al-gradient-text">{{ copy.hero.title[2] }}</span></h1>
-          <p class="al-definition">{{ copy.hero.definition }}</p>
-          <p class="al-practical">{{ copy.hero.practical }}</p>
-          <a class="al-primary-button" :href="release.installer.url"><span class="al-windows" aria-hidden="true">⊞</span>{{ copy.hero.download }}</a>
-          <p class="al-release-meta">{{ copy.hero.platform }} · v{{ release.version }} · {{ formatBytes(release.installer.bytes) }}</p>
+        <div class="al-hero-main">
+          <div class="al-hero-copy">
+            <div class="al-eyebrow-badge">
+              <span class="al-eyebrow-beacon" aria-hidden="true" />
+              <p class="al-eyebrow">{{ copy.hero.eyebrow }}</p>
+            </div>
+            <h1><span>{{ copy.hero.title[0] }}</span><span>{{ copy.hero.title[1] }}</span><span class="al-gradient-text">{{ copy.hero.title[2] }}</span></h1>
+            <p class="al-definition">{{ copy.hero.definition }}</p>
+            <p class="al-practical">{{ copy.hero.practical }}</p>
+            <div class="al-hero-actions">
+              <a class="al-primary-button" :href="release.installer.url"><span class="al-windows" aria-hidden="true">⊞</span>{{ copy.hero.download }}</a>
+              <a class="al-hero-demo-button" href="#demo"><span class="al-demo-play-icon" aria-hidden="true">▶</span><span>{{ copy.hero.demo }}</span></a>
+            </div>
+            <p class="al-release-meta">{{ copy.hero.platform }} · v{{ release.version }} · {{ formatBytes(release.installer.bytes) }}</p>
+          </div>
+
+          <div class="al-studio-workstation">
+            <div class="al-studio-frame">
+              <div class="al-studio-topbar">
+                <div class="al-studio-tabs" role="tablist" :aria-label="locale === 'en' ? 'Task governance stages' : '任务治理阶段'">
+                  <button
+                    v-for="(stage, idx) in copy.hero.stages"
+                    :key="stage"
+                    type="button"
+                    role="tab"
+                    :id="`stage-tab-${idx}`"
+                    aria-controls="stage-panel"
+                    :aria-selected="activeStage === idx"
+                    :tabindex="activeStage === idx ? 0 : -1"
+                    :class="['al-studio-tab', { 'is-active': activeStage === idx }]"
+                    @click="activeStage = idx"
+                    @keydown="onTabKeydown($event, idx)"
+                  >
+                    <span class="al-stage-num">0{{ idx + 1 }}</span>
+                    <span class="al-stage-title">{{ stage }}</span>
+                  </button>
+                </div>
+              </div>
+
+              <figure
+                class="al-studio-viewport"
+                role="tabpanel"
+                id="stage-panel"
+                :aria-labelledby="`stage-tab-${activeStage}`"
+                tabindex="0"
+              >
+                <img
+                  :key="activeStage"
+                  :src="activeImage.src"
+                  :alt="activeImage.alt"
+                  class="al-studio-screen-img"
+                  width="2561"
+                  height="1527"
+                >
+              </figure>
+
+              <div class="al-studio-bottombar">
+                <a class="al-studio-play" href="#demo" :aria-label="copy.hero.demo">
+                  <span class="al-play-pill-icon" aria-hidden="true">▶</span>
+                  <span>{{ copy.hero.demo }}</span>
+                </a>
+                <div class="al-studio-facts">
+                  <span>{{ copy.demo.facts[0] }}</span>
+                  <span class="al-studio-fact-dot" aria-hidden="true">·</span>
+                  <span>{{ copy.demo.facts[2] }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="al-product-stage">
-          <figure class="al-stage-card al-stage-impact">
-            <figcaption>{{ copy.hero.stages[0] }}</figcaption>
-            <img :src="current.impact" :alt="copy.alt.impact">
-          </figure>
-          <figure class="al-stage-card al-stage-trajectory">
-            <figcaption>{{ copy.hero.stages[1] }}</figcaption>
-            <img :src="current.trajectory" :alt="copy.alt.trajectory">
-          </figure>
-          <figure class="al-stage-card al-stage-record">
-            <figcaption>{{ copy.hero.stages[2] }}</figcaption>
-            <img :src="current.record" :alt="copy.alt.record">
-          </figure>
-          <a class="al-play" href="#demo" :aria-label="copy.hero.demo"><span aria-hidden="true">▶</span><small>{{ copy.hero.demo }}</small></a>
+        <div class="al-hero-loop-wrap">
           <ol class="al-loop">
             <li v-for="([title, body], index) in copy.loop" :key="title"><span class="al-loop-icon">{{ index + 1 }}</span><span><strong>{{ title }}</strong><small>{{ body }}</small></span></li>
           </ol>
