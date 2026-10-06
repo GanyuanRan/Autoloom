@@ -26,7 +26,6 @@ const current = computed(() => ({
 
 const activeStage = ref(0)
 const heroVideo = ref(null)
-const demoVideo = ref(null)
 const showHeroVideo = ref(false)
 const heroVideoError = ref(false)
 const activeImage = computed(() => {
@@ -35,14 +34,17 @@ const activeImage = computed(() => {
   return { src: current.value.record, alt: copy.value.alt.record }
 })
 
-function playHeroVideo() {
+function playHeroVideo(scrollToPlayer = false) {
   showHeroVideo.value = true
   heroVideoError.value = false
   const video = heroVideo.value
   video.play().catch(error => {
     if (showHeroVideo.value && error.name !== 'AbortError') heroVideoError.value = true
   })
-  nextTick(() => video.focus({ preventScroll: true }))
+  nextTick(() => {
+    if (scrollToPlayer) video.scrollIntoView({ block: 'center' })
+    video.focus({ preventScroll: true })
+  })
 }
 
 function selectStage(index) {
@@ -140,14 +142,13 @@ function onTabKeydown(event, index) {
                   playsinline
                   preload="none"
                   tabindex="0"
-                  @play="demoVideo.pause()"
                 />
                 <button
                   v-if="!showHeroVideo"
                   type="button"
                   class="al-studio-video-play"
                   aria-controls="hero-task-video"
-                  @click="playHeroVideo"
+                  @click="playHeroVideo(false)"
                 >
                   <span class="al-studio-play-icon" aria-hidden="true">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
@@ -209,7 +210,7 @@ function onTabKeydown(event, index) {
           <article class="al-relationship-card al-runtime-card">
             <span>{{ copy.relationship.autoloom.label }}</span><h3>{{ copy.relationship.autoloom.title }}</h3><p>{{ copy.relationship.autoloom.body }}</p>
             <ul><li v-for="item in copy.relationship.autoloom.items" :key="item">{{ item }}</li></ul>
-            <a class="al-primary-button al-blue-button" href="#demo">{{ copy.relationship.autoloom.cta }}</a>
+            <button type="button" class="al-primary-button al-blue-button" aria-controls="hero-task-video" @click="playHeroVideo(true)">{{ copy.relationship.autoloom.cta }}</button>
           </article>
         </div>
         <p class="al-relationship-note">{{ copy.relationship.note }}</p>
@@ -233,7 +234,6 @@ function onTabKeydown(event, index) {
 
       <section id="demo" class="al-section al-demo-section">
         <div class="al-section-heading al-centered"><h2>{{ copy.demo.title }}</h2></div>
-        <video ref="demoVideo" class="al-demo-video" controls playsinline preload="metadata" :poster="current.poster" @play="heroVideo.pause()"><source :src="current.video" type="video/mp4"></video>
         <ol class="al-demo-flow"><li v-for="(step, index) in copy.demo.flow" :key="step"><span>{{ index + 1 }}</span>{{ step }}</li></ol>
         <div class="al-demo-facts"><strong>{{ copy.demo.label }}</strong><span v-for="fact in copy.demo.facts" :key="fact">{{ fact }}</span></div>
       </section>

@@ -892,16 +892,6 @@ body {
     #fff;
 }
 
-.al-demo-video {
-  display: block;
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  border: 1px solid rgba(52, 102, 197, 0.2);
-  border-radius: 20px;
-  background: #060b18;
-  box-shadow: 0 30px 75px rgba(24, 61, 129, 0.18);
-}
-
 .al-demo-flow {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

@@ -79,7 +79,7 @@ const zh = {
   },
   trajectory: { title: '轨迹让执行过程可以回看。', body: '按轮次查看上下文、模型输出、工具调用、参数、结果与时间。', labels: ['请求上下文', '工具结果', '结果提交'] },
   record: { title: '治理页把分散事实组织成完整记录。', body: '从治理概览进入行动评估、检查点、执行事实与工作结果。', flow: '治理影响 → 检查点 → 执行事实 → 结果记录', note: '记录帮助复核，不等同于对任务正确性的保证。' },
-  demo: { title: '40 秒，看完治理工程如何进入一次真实任务。', flow: ['发现问题', '形成治理影响', '执行修改', '运行原有检查', '记录结果'], label: '本次演示', facts: ['3 项失败 → 4 项通过', '1 个实现文件修改', '原有测试未改动'] },
+  demo: { title: '真实任务的执行过程与结果。', flow: ['发现问题', '形成治理影响', '执行修改', '运行原有检查', '记录结果'], label: '本次演示', facts: ['3 项失败 → 4 项通过', '1 个实现文件修改', '原有测试未改动'] },
   boundaries: {
     title: '治理之外，边界也必须清楚。',
     items: [
@@ -161,7 +161,7 @@ const en = {
   },
   trajectory: { title: 'Trajectory makes execution reviewable.', body: 'Inspect context, model output, tool calls, arguments, results, and timing by turn.', labels: ['Request context', 'Tool result', 'Result submission'] },
   record: { title: 'Governance organizes scattered facts into one record.', body: 'Move from the overview into action assessments, checkpoints, execution facts, and work results.', flow: 'Governance impact → Checkpoint → Execution facts → Result record', note: 'The record supports review; it is not a guarantee that the task is correct.' },
-  demo: { title: 'See Governance Engineering enter a real task in 40 seconds.', flow: ['Find the issue', 'Form governance impact', 'Apply the change', 'Run existing checks', 'Record the result'], label: 'This demo', facts: ['3 failures → 4 passing', '1 implementation file changed', 'Existing tests unchanged'] },
+  demo: { title: 'A real task: steps and results.', flow: ['Find the issue', 'Form governance impact', 'Apply the change', 'Run existing checks', 'Record the result'], label: 'This demo', facts: ['3 failures → 4 passing', '1 implementation file changed', 'Existing tests unchanged'] },
   boundaries: {
     title: 'The boundaries must be as clear as the governance.',
     items: [['Permission mode', 'Determines what the Agent may read, change, or execute.'], ['Model connection', 'Uses a supported account or API configuration.'], ['Project location', 'The workspace is local; model requests may send relevant context.'], ['Session record', 'Tasks, tool results, and governance facts remain inspectable.']],
