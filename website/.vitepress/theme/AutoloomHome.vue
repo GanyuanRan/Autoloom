@@ -69,7 +69,7 @@ function onTabKeydown(event, index) {
 </script>
 
 <template>
-  <div class="al-site" :lang="locale">
+  <div id="demo" class="al-site" :lang="locale">
     <a class="al-skip" href="#main">{{ locale === 'en' ? 'Skip to content' : '跳至正文' }}</a>
     <SiteHeader :locale="locale" :copy="copy" :download-url="release.installer.url" :language-href="locale === 'en' ? '/' : '/en/'" home />
 
@@ -232,7 +232,7 @@ function onTabKeydown(event, index) {
         <p class="al-record-flow">{{ copy.record.flow }}</p><p class="al-honest-note">{{ copy.record.note }}</p>
       </section>
 
-      <section id="demo" class="al-section al-demo-section">
+      <section id="demo-results" class="al-section al-demo-section">
         <div class="al-section-heading al-centered"><h2>{{ copy.demo.title }}</h2></div>
         <ol class="al-demo-flow"><li v-for="(step, index) in copy.demo.flow" :key="step"><span>{{ index + 1 }}</span>{{ step }}</li></ol>
         <div class="al-demo-facts"><strong>{{ copy.demo.label }}</strong><span v-for="fact in copy.demo.facts" :key="fact">{{ fact }}</span></div>
