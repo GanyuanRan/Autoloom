@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { homeContent } from './home-content.mjs'
 import SiteFooter from './SiteFooter.vue'
@@ -25,11 +25,32 @@ const current = computed(() => ({
 }))
 
 const activeStage = ref(0)
+const heroVideo = ref(null)
+const demoVideo = ref(null)
+const showHeroVideo = ref(false)
+const heroVideoError = ref(false)
 const activeImage = computed(() => {
   if (activeStage.value === 0) return { src: current.value.impact, alt: copy.value.alt.impact }
   if (activeStage.value === 1) return { src: current.value.trajectory, alt: copy.value.alt.trajectory }
   return { src: current.value.record, alt: copy.value.alt.record }
 })
+
+function playHeroVideo() {
+  showHeroVideo.value = true
+  heroVideoError.value = false
+  const video = heroVideo.value
+  video.play().catch(error => {
+    if (showHeroVideo.value && error.name !== 'AbortError') heroVideoError.value = true
+  })
+  nextTick(() => video.focus({ preventScroll: true }))
+}
+
+function selectStage(index) {
+  heroVideo.value.pause()
+  showHeroVideo.value = false
+  heroVideoError.value = false
+  activeStage.value = index
+}
 
 function onTabKeydown(event, index) {
   const count = copy.value.hero.stages.length
@@ -40,7 +61,7 @@ function onTabKeydown(event, index) {
   else if (event.key === 'End') next = count - 1
   else return
   event.preventDefault()
-  activeStage.value = next
+  selectStage(next)
   document.getElementById(`stage-tab-${next}`)?.focus()
 }
 </script>
@@ -64,7 +85,6 @@ function onTabKeydown(event, index) {
             <p class="al-practical">{{ copy.hero.practical }}</p>
             <div class="al-hero-actions">
               <a class="al-primary-button" :href="release.installer.url"><span class="al-windows" aria-hidden="true">⊞</span>{{ copy.hero.download }}</a>
-              <a class="al-hero-demo-button" href="#demo"><span class="al-demo-play-icon" aria-hidden="true">▶</span><span>{{ copy.hero.demo }}</span></a>
             </div>
             <p class="al-release-meta">{{ copy.hero.platform }} · v{{ release.version }} · {{ formatBytes(release.installer.bytes) }}</p>
           </div>
@@ -83,7 +103,7 @@ function onTabKeydown(event, index) {
                     :aria-selected="activeStage === idx"
                     :tabindex="activeStage === idx ? 0 : -1"
                     :class="['al-studio-tab', { 'is-active': activeStage === idx }]"
-                    @click="activeStage = idx"
+                    @click="selectStage(idx)"
                     @keydown="onTabKeydown($event, idx)"
                   >
                     <span class="al-stage-num">0{{ idx + 1 }}</span>
@@ -100,6 +120,7 @@ function onTabKeydown(event, index) {
                 tabindex="0"
               >
                 <img
+                  v-show="!showHeroVideo"
                   :key="activeStage"
                   :src="activeImage.src"
                   :alt="activeImage.alt"
@@ -107,13 +128,37 @@ function onTabKeydown(event, index) {
                   width="2561"
                   height="1527"
                 >
+                <video
+                  v-show="showHeroVideo"
+                  ref="heroVideo"
+                  id="hero-task-video"
+                  class="al-studio-video"
+                  :src="current.video"
+                  :poster="current.poster"
+                  :aria-label="copy.hero.demo"
+                  controls
+                  playsinline
+                  preload="none"
+                  tabindex="0"
+                  @play="demoVideo.pause()"
+                />
+                <button
+                  v-if="!showHeroVideo"
+                  type="button"
+                  class="al-studio-video-play"
+                  aria-controls="hero-task-video"
+                  @click="playHeroVideo"
+                >
+                  <span class="al-studio-play-icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                  </span>
+                  <span class="al-studio-play-label">{{ copy.hero.demo }}</span>
+                </button>
+                <p v-if="heroVideoError" class="al-studio-video-error" role="status">{{ locale === 'en' ? 'The video could not play. Please try again.' : '视频暂时无法播放，请稍后重试。' }}</p>
               </figure>
 
               <div class="al-studio-bottombar">
-                <a class="al-studio-play" href="#demo" :aria-label="copy.hero.demo">
-                  <span class="al-play-pill-icon" aria-hidden="true">▶</span>
-                  <span>{{ copy.hero.demo }}</span>
-                </a>
+                <span class="al-studio-demo-label">{{ copy.demo.label }}</span>
                 <div class="al-studio-facts">
                   <span>{{ copy.demo.facts[0] }}</span>
                   <span class="al-studio-fact-dot" aria-hidden="true">·</span>
@@ -188,7 +233,7 @@ function onTabKeydown(event, index) {
 
       <section id="demo" class="al-section al-demo-section">
         <div class="al-section-heading al-centered"><h2>{{ copy.demo.title }}</h2></div>
-        <video class="al-demo-video" controls playsinline preload="metadata" :poster="current.poster"><source :src="current.video" type="video/mp4"></video>
+        <video ref="demoVideo" class="al-demo-video" controls playsinline preload="metadata" :poster="current.poster" @play="heroVideo.pause()"><source :src="current.video" type="video/mp4"></video>
         <ol class="al-demo-flow"><li v-for="(step, index) in copy.demo.flow" :key="step"><span>{{ index + 1 }}</span>{{ step }}</li></ol>
         <div class="al-demo-facts"><strong>{{ copy.demo.label }}</strong><span v-for="fact in copy.demo.facts" :key="fact">{{ fact }}</span></div>
       </section>
