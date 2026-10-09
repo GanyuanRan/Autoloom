@@ -17,8 +17,9 @@ on:
       - 'LICENSE.md'
       - 'package.json'
       - 'pnpm-lock.yaml'
-  release:
-    types: [published, edited, released]
+  workflow_run:
+    workflows: ['Refresh release index']
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -30,6 +31,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -38,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          ref: main
           persist-credentials: false
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
