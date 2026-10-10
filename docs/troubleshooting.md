@@ -32,6 +32,10 @@ Confirm that the original project directory is available and that its hidden `.a
 
 Do not create or edit Session log files manually. Back up the affected data before attempting recovery. See [Sessions, backup, and recovery](sessions-backup-and-recovery.md).
 
+## A task requests an unavailable historical baseline
+
+Use Beta 1 or later and resume the task. A Work retains the baseline revision that applied when it started; a later baseline advance does not require you to recover that older document or waive result recording. Missing context remains explicit, and the Agent reviews the current requirements and asks only when a material task decision needs your input. A recorded result is not proof that verification or requirement acceptance passed. Do not manually change Work bindings or protected `.autoloom` records.
+
 ## Update download or restart fails
 
 Finish or stop active work and retry the update. If it still fails, download the installer manually from Releases, verify its checksum, close Autoloom, and run it. Settings and Sessions should remain outside the installation directory. See [Updates and rollback](updates-and-rollback.md).
