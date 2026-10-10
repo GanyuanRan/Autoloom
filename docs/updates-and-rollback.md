@@ -2,7 +2,9 @@
 
 English | [中文](updates-and-rollback.zh-CN.md)
 
-The installed Windows client checks this repository's public Alpha release feed. Automatic checking and downloading are enabled by default and can be changed under **Settings → General**.
+The installed Windows client checks this repository's public Beta release feed. Automatic checking and downloading are enabled by default and can be changed under **Settings → General**.
+
+Alpha 13 can discover Beta 1 directly and install it with one explicit restart. Earlier Alpha clients must first install Alpha 13 or manually install Beta. Beta clients receive newer Beta or stable releases and exclude Alpha releases.
 
 ## Install an update
 
@@ -25,12 +27,12 @@ Use the same steps to repair a damaged installation. Do not delete `%USERPROFILE
 
 ## Roll back
 
-Autoloom does not currently provide an in-app rollback button. Alpha data formats may change, and an older client can reject settings or Session data written by a newer client.
+Autoloom does not currently provide an in-app rollback button. Beta data formats may change, and an older client can reject settings or Session data written by a newer client.
 
 Before updating, keep a backup associated with the installed version. To attempt a rollback, close Autoloom, download the older installer from its Release, verify its checksum, and read that Release's compatibility notes. If the older client rejects current data, restore the matching pre-update project and Autoloom data backup. If no matching backup exists, reinstall the newest release rather than modifying stored records by hand.
 
 Installing an older binary does not roll back changes the agent made to project files or external systems. Use your project's version control and service-specific recovery procedures for those changes.
 
-## Authenticity and Alpha limits
+## Authenticity and Beta limits
 
-The current Alpha installer has no Windows code signature, so Windows may show an unknown-publisher or SmartScreen prompt. Only use installers from this repository and verify `SHA256SUMS`. Each Release documents its changes and validation scope; installation or interface checks do not imply that every real-provider workflow passed end to end.
+The current Beta installer has no Windows code signature, so Windows may show an unknown-publisher or SmartScreen prompt. Only use installers from this repository and verify `SHA256SUMS`. Each Release documents its changes and validation scope; installation or interface checks do not imply that every real-provider workflow passed end to end.

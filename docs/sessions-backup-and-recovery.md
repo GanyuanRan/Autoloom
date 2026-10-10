@@ -22,7 +22,7 @@ Use the export action in the Session header. Autoloom opens a Windows **Save As*
 
 The export is intended for diagnostics and inspection. It is not a complete project backup, does not contain ordinary project files, and does not contain Windows Credential Manager records. It may expose project content, prompts, paths, and command output; inspect and redact it before sharing.
 
-## Back up before an Alpha update
+## Back up before an Beta update
 
 Finish or stop active tasks, close Autoloom, and make a consistent copy of:
 
@@ -41,4 +41,4 @@ After an ordinary process interruption, reopen the same project and Session. Aut
 
 If a Session cannot load, do not delete or rewrite its `.autoloom` files. Close Autoloom, copy the affected project and global data directory, collect `%USERPROFILE%\.autoloom\logs\desktop.log`, and report the problem. A Session export is useful when the Session still opens.
 
-Alpha data formats can change without backward compatibility. If a newer version cannot use old records, follow that Release's migration instructions. If an older version rejects data written by a newer version, restore the backup made for that older version or reinstall the latest version.
+Beta data formats can change without backward compatibility. If a newer version cannot use old records, follow that Release's migration instructions. If an older version rejects data written by a newer version, restore the backup made for that older version or reinstall the latest version.

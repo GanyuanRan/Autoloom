@@ -2,7 +2,7 @@
 
 [English](getting-started.md) | 中文
 
-Autoloom 目前提供 Windows x64 Alpha 版本。第一次使用时，请选择已经备份或纳入版本控制的项目。
+Autoloom 目前提供 Windows x64 Beta 版本。第一次使用时，请选择已经备份或纳入版本控制的项目。
 
 ## 1. 下载并校验
 
@@ -14,7 +14,7 @@ Autoloom 目前提供 Windows x64 Alpha 版本。第一次使用时，请选择�
 Get-FileHash -Algorithm SHA256 "C:\安装包路径\Autoloom-<版本>-win-x64.exe"
 ```
 
-把结果与 `SHA256SUMS` 中对应安装包的记录比较。当前 Alpha 安装包尚未签名，因此 Windows 可能显示未知发布者或 SmartScreen 提示。请确认文件来自本仓库且哈希一致，不要关闭 Windows 安全功能。
+把结果与 `SHA256SUMS` 中对应安装包的记录比较。当前 Beta 安装包尚未签名，因此 Windows 可能显示未知发布者或 SmartScreen 提示。请确认文件来自本仓库且哈希一致，不要关闭 Windows 安全功能。
 
 ## 2. 安装并配置模型
 
@@ -36,6 +36,6 @@ Autoloom 默认使用**工作区写入**权限：可以修改所选项目内的�
 
 ## 5. 保留可恢复副本
 
-项目记录位于项目内隐藏的 `.autoloom` 目录，全局设置与诊断默认位于 `%USERPROFILE%\.autoloom`。请使用版本控制或其他方式备份项目，并在 Alpha 升级前阅读 [Session、备份与恢复](sessions-backup-and-recovery.zh-CN.md)。
+项目记录位于项目内隐藏的 `.autoloom` 目录，全局设置与诊断默认位于 `%USERPROFILE%\.autoloom`。请使用版本控制或其他方式备份项目，并在 Beta 升级前阅读 [Session、备份与恢复](sessions-backup-and-recovery.zh-CN.md)。
 
 如需通过 SSH 使用 Linux 项目，请继续阅读[本地与 SSH 项目](local-and-ssh-projects.zh-CN.md)。

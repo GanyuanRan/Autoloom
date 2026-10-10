@@ -2,9 +2,9 @@
 
 <p align="center"><strong>Governance Engineering for Coding Agents</strong></p>
 
-<p align="center">Free desktop client · Your choice of model · Windows x64 Alpha</p>
+<p align="center">Free desktop client · Your choice of model · Windows x64 Beta</p>
 
-<p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Alpha</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
+<p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Beta</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
@@ -69,7 +69,7 @@ That ambition comes with an ongoing question: **how can we achieve the best poss
 
 We care about the total cost of reliably delivering a requirement: model calls, waiting time, human supervision, and rework caused by defects. Reducing unproductive attempts and repeated context, and directing verification effort toward what matters to the result, are continuing priorities. Different tasks need different tradeoffs. We aim to improve how much of all three can be achieved together and test those improvements on real tasks.
 
-Autoloom is in Alpha. Fully automated development and a better balance across these three dimensions are goals we are working toward.
+Autoloom is in Beta. Fully automated development and a better balance across these three dimensions are goals we are working toward.
 
 **macOS and Linux desktop clients are planned**, so you can use Autoloom on your preferred operating system. Windows x64 is currently available; progress on macOS and Linux will be announced in this repository.
 
@@ -87,9 +87,11 @@ For new releases and repository activity, select **Watch → All Activity** at t
 
 The client is free; your chosen provider bills model usage.
 
-The workspace supports local projects and Linux x64 projects connected over SSH, with project files, code diffs, command logs, previews, and docked interactive terminals. Remote environment requirements are listed in the Alpha notes below.
+The workspace supports local projects and Linux x64 projects connected over SSH, with project files, code diffs, command logs, previews, and docked interactive terminals. Remote environment requirements are listed in the Beta notes below.
 
-The installed client supports background checks and downloads for Alpha updates. Once a download is ready, click “Restart to update” to install and reopen the client. Finish or stop active tasks first; ordinary exit does not install an update. Users of the older extracted ZIP must install the first installer release manually.
+Web search works in local and SSH projects through built-in public Parallel/Exa MCP services, without a separate search API key. Direct page reading supports proxy Fake-IP DNS while retaining public-network access checks. Anonymous search remains subject to upstream limits.
+
+The installed client supports background checks and downloads for Beta updates. Once a download is ready, click “Restart to update” to install and reopen the client. Finish or stop active tasks first; ordinary exit does not install an update. Users of the older extracted ZIP must install the first installer release manually.
 
 The [user documentation](docs/README.md) covers model providers, permissions, local and SSH projects, Session backup, updates, and troubleshooting.
 
@@ -111,9 +113,9 @@ This repository is Autoloom's official hub for downloads, release notes and feed
 Autoloom’s client source code is not currently public. As the project evolves, we’ll evaluate what to open source and how, taking community feedback and sustainable maintenance into account. The current closed-source approach is not a commitment to staying closed source permanently. We’ll share concrete plans in this repository when they’re ready.
 
 <details>
-<summary>Alpha notes and validation scope</summary>
+<summary>Beta notes and validation scope</summary>
 
-- The current release is a Windows x64 test build. Data formats may change during Alpha; back up important projects and task records before upgrading. Incompatible versions will provide manual upgrade instructions.
+- The current release is a Windows x64 test build. Data formats may change during Beta; back up important projects and task records before upgrading. Incompatible versions will provide manual upgrade instructions.
 - SSH remote projects support Linux x64 and require a working SSH connection and Node.js 22.x, version 22.19 or later. Restricted commands also require a working Bubblewrap sandbox backend.
 - The installer has no Windows code signature, so Windows may show an unknown-publisher or SmartScreen prompt. Download from this repository's Releases and verify the checksum without disabling system security features.
 - Each release provides `SHA256SUMS`. Check the file with PowerShell using `Get-FileHash -Algorithm SHA256 <installer-path>`.

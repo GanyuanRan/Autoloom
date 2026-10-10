@@ -18,6 +18,8 @@ Startup diagnostics are appended to `%USERPROFILE%\.autoloom\logs\desktop.log`. 
 
 When you run a task, Autoloom sends the assembled model request to the provider and endpoint selected in **Settings → Models**. Depending on the task and conversation, that request can include your instructions, system instructions, retained conversation history, tool results, selected file content, and attached images. The provider's own data-use and retention terms apply.
 
+Default web search sends only the query to Parallel's public MCP service; a transient error or rate limit can send the same query to Exa once. Their anonymous services have finite limits. For Fake-IP page reading, HTTPS DNS sends the destination hostname and record type to Cloudflare or Google; it does not send the full page URL or your conversation. The page request then goes directly to a validated public address.
+
 When the agent uses web search, the search query is sent to the configured search provider and returned sources become part of the Session. Opening a web Preview contacts the address you chose from a separate, nonpersistent browser guest session. The guest blocks popups, downloads, and permission requests; opening a link in your system browser transfers handling to that browser.
 
 Autoloom refreshes public model metadata from `models.dev` and may retrieve provider compatibility metadata from this public GitHub repository. With automatic updates enabled, which is the default, the Desktop checks this repository's GitHub Releases feed and downloads a newer installer in the background. You can turn automatic downloads off under **Settings → General** and check manually instead.

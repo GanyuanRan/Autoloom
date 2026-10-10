@@ -2,9 +2,9 @@
 
 <p align="center"><strong>面向 Coding Agent 的治理工程</strong></p>
 
-<p align="center">免费桌面客户端 · 自选模型 · Windows x64 Alpha</p>
+<p align="center">免费桌面客户端 · 自选模型 · Windows x64 Beta</p>
 
-<p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Alpha</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
+<p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Beta</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
 <p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
@@ -69,7 +69,7 @@ Autoloom 基于 DeepSeek 官方开源项目 **DeepSeek Harness [dsh-v0.1.1-rc.2]
 
 我们关注的是把一项需求可靠交付的总成本：模型调用、等待时间、人工监督，以及缺陷带来的返工。减少无效尝试和重复上下文，把验证投入放在真正影响结果的地方，是我们持续优化的方向。不同任务需要不同取舍；我们会努力扩大三者能够兼顾的空间，并用实际任务检验改进。
 
-Autoloom 目前处于 Alpha 阶段。全自动开发与更好的三者平衡，是我们持续投入的目标。
+Autoloom 目前处于 Beta 阶段。全自动开发与更好的三者平衡，是我们持续投入的目标。
 
 **后续将支持 macOS 和 Linux 桌面客户端**，让你在习惯的操作系统上使用 Autoloom。目前可下载的是 Windows x64 版本；macOS／Linux 版本的具体进展将通过本仓库公布。
 
@@ -87,9 +87,11 @@ Autoloom 目前处于 Alpha 阶段。全自动开发与更好的三者平衡，�
 
 客户端免费使用，模型费用由你选择的供应商收取。
 
-工作台支持本地项目与 SSH 连接的 Linux x64 项目，提供项目文件、代码差异、命令日志、预览入口和停靠式交互终端。远端环境要求见下方 Alpha 使用说明。
+工作台支持本地项目与 SSH 连接的 Linux x64 项目，提供项目文件、代码差异、命令日志、预览入口和停靠式交互终端。远端环境要求见下方 Beta 使用说明。
 
-安装版支持后台检查和下载 Alpha 更新。下载完成后点击“重启更新”即可安装并重新打开客户端；活动任务需先完成或停止，普通退出不会安装更新。旧 ZIP 解压版用户需手动安装首个安装版。
+本地与 SSH 项目均可通过内置 Parallel/Exa 公共 MCP 服务搜索，无须另配搜索 API key。直接网页读取兼容代理 Fake-IP DNS，并保留公网访问校验；匿名搜索仍受上游额度限制。
+
+安装版支持后台检查和下载 Beta 更新。下载完成后点击“重启更新”即可安装并重新打开客户端；活动任务需先完成或停止，普通退出不会安装更新。旧 ZIP 解压版用户需手动安装首个安装版。
 
 [使用文档](docs/README.zh-CN.md)包含模型供应商、权限、本地与 SSH 项目、Session 备份、更新和故障排查说明。
 
@@ -111,9 +113,9 @@ Autoloom 目前处于 Alpha 阶段。全自动开发与更好的三者平衡，�
 Autoloom 客户端源码目前尚未公开。我们会根据项目进展、社区反馈和持续维护的实际情况，评估后续的开源范围与方式。当前的闭源状态并不意味着永久闭源；具体计划确定后，将在本仓库公布。
 
 <details>
-<summary>Alpha 使用说明与验证范围</summary>
+<summary>Beta 使用说明与验证范围</summary>
 
-- 当前发布 Windows x64 测试版。Alpha 阶段数据格式可能变化，升级前请备份重要项目和任务记录；不兼容版本会提供手动升级指引。
+- 当前发布 Windows x64 测试版。Beta 阶段数据格式可能变化，升级前请备份重要项目和任务记录；不兼容版本会提供手动升级指引。
 - SSH 远端项目支持 Linux x64，需要可用的 SSH 连接及 Node.js 22.x（22.19 或更高）。运行受限命令还需要可用的 Bubblewrap 沙箱后端。
 - 当前安装包未进行 Windows 代码签名，可能显示未知发布者或 SmartScreen 提示。请从本仓库 Releases 下载并核对校验和，无需关闭系统安全功能。
 - 每个版本提供 `SHA256SUMS`。可用 PowerShell `Get-FileHash -Algorithm SHA256 <安装包路径>` 核对文件。

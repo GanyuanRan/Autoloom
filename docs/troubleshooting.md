@@ -6,7 +6,7 @@ Start by recording the Autoloom version, Windows version, whether the project is
 
 ## The installer is blocked or shows an unknown publisher
 
-The current Alpha installer is unsigned. Confirm that it came from this repository's [Releases](https://github.com/GanyuanRan/Autoloom/releases) and that its SHA-256 matches `SHA256SUMS`. Do not download a copy from a third-party mirror or disable Windows security features.
+The current Beta installer is unsigned. Confirm that it came from this repository's [Releases](https://github.com/GanyuanRan/Autoloom/releases) and that its SHA-256 matches `SHA256SUMS`. Do not download a copy from a third-party mirror or disable Windows security features.
 
 ## Autoloom does not start
 

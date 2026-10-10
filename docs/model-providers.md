@@ -34,13 +34,13 @@ For each turn, Autoloom sends the assembled request to the selected endpoint. It
 
 ## Web search and page reading
 
-Autoloom treats discovery and reading a known page as separate operations. For `web_search`, it first asks the exact model route selected for the current step to perform an isolated hosted search. That auxiliary request contains only a fixed search instruction and the query, and Autoloom accepts it only when the provider reports that its server-side search tool actually ran.
+By default, `web_search` uses Parallel's public MCP endpoint without a separate search account or API key. Exa's public MCP endpoint is the alternative; a transient failure or rate limit permits one attempt with the other public service. Anonymous access has upstream quotas and availability limits. Autoloom does not silently switch to a paid service. Only the search query is sent to these services, not your conversation, project files or model credentials.
 
-Autoloom uses the independent search service selected under **Settings → Plugins → Web search** only when the model route explicitly does not support hosted search or does not execute it. Authentication, quota, timeout, transport, and provider-server failures remain visible errors instead of silently sending the query to another service. If neither hosted search nor a configured fallback is available, Autoloom explains where to configure one.
+Local and SSH projects both support default search. SSH search and page reading run on the remote host and depend on that host's network access. Search does not require the chosen model to support hosted search. The optional model mode uses verified hosted search on the selected route and an explicitly configured independent fallback.
 
-Reading a specific HTTP(S) URL uses `web_fetch` directly and does not depend on search support. It accepts only public-network destinations. Search results and fetched pages are supplied to the Agent as untrusted reference data, so instructions embedded in a page do not override your request or Autoloom's rules.
+`web_fetch` reads a specified HTTP(S) URL directly. If a proxy's Fake-IP DNS returns a synthetic address for a hostname, Autoloom obtains real addresses through HTTPS DNS and validates that they are public before connecting. Literal reserved addresses, private destinations and unsafe redirects remain blocked. You do not need to change your proxy's DNS configuration for this path.
 
-In the current Alpha, `web_search` is available for local projects. An SSH project reports search as unavailable instead of copying search credentials to the remote host.
+Search results and fetched pages are supplied to the Agent as untrusted reference data, so instructions embedded in a page do not override your request or Autoloom's rules. Your chosen model still consumes tokens when it processes these results.
 
 ## Common failures
 

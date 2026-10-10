@@ -6,7 +6,7 @@
 
 ## 安装包被拦截或显示未知发布者
 
-当前 Alpha 安装包尚未签名。请确认文件来自本仓库的 [Releases](https://github.com/GanyuanRan/Autoloom/releases)，并核对 SHA-256 与 `SHA256SUMS` 一致。不要使用第三方镜像提供的副本，也不要关闭 Windows 安全功能。
+当前 Beta 安装包尚未签名。请确认文件来自本仓库的 [Releases](https://github.com/GanyuanRan/Autoloom/releases)，并核对 SHA-256 与 `SHA256SUMS` 一致。不要使用第三方镜像提供的副本，也不要关闭 Windows 安全功能。
 
 ## Autoloom 无法启动
 

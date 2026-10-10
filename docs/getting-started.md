@@ -2,7 +2,7 @@
 
 English | [中文](getting-started.zh-CN.md)
 
-Autoloom currently ships as a Windows x64 Alpha. Use it first on a project that is backed up or under version control.
+Autoloom currently ships as a Windows x64 Beta. Use it first on a project that is backed up or under version control.
 
 ## 1. Download and verify
 
@@ -14,7 +14,7 @@ In PowerShell, run:
 Get-FileHash -Algorithm SHA256 "C:\path\to\Autoloom-<version>-win-x64.exe"
 ```
 
-Compare the result with the installer entry in `SHA256SUMS`. The current Alpha installer is unsigned, so Windows may show an unknown-publisher or SmartScreen prompt. Confirm that the file came from this repository and that its hash matches; do not disable Windows security features.
+Compare the result with the installer entry in `SHA256SUMS`. The current Beta installer is unsigned, so Windows may show an unknown-publisher or SmartScreen prompt. Confirm that the file came from this repository and that its hash matches; do not disable Windows security features.
 
 ## 2. Install and configure a model
 
@@ -36,6 +36,6 @@ Reopen the same Session to continue interrupted work. Use the Session header's e
 
 ## 5. Keep a recoverable copy
 
-Project-owned records live under the hidden `.autoloom` directory in the project, while global settings and diagnostics live under `%USERPROFILE%\.autoloom` by default. Keep the project under version control or another backup system, and read [Sessions, backup, and recovery](sessions-backup-and-recovery.md) before an Alpha upgrade.
+Project-owned records live under the hidden `.autoloom` directory in the project, while global settings and diagnostics live under `%USERPROFILE%\.autoloom` by default. Keep the project under version control or another backup system, and read [Sessions, backup, and recovery](sessions-backup-and-recovery.md) before an Beta upgrade.
 
 To use a Linux project over SSH, continue with [Local and SSH projects](local-and-ssh-projects.md).
