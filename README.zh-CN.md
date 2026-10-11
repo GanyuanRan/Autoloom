@@ -10,8 +10,6 @@
 
 <p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Beta</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
-<p align="center"><strong>40 秒真实任务演示</strong></p>
-
 https://github.com/user-attachments/assets/65035e92-dc4d-43db-b604-021529dac6cf
 
 <p align="center"><a href="https://autoloom.codes/#stage-panel">在官网观看 →</a></p>

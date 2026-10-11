@@ -10,8 +10,6 @@
 
 <p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Beta</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
 
-<p align="center"><strong>40-second real-task demo</strong></p>
-
 https://github.com/user-attachments/assets/7a5f00f4-2761-452f-a122-0ee6ef01c3f0
 
 <p align="center"><a href="https://autoloom.codes/en/#stage-panel">Watch on the website →</a></p>
