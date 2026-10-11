@@ -106,8 +106,6 @@ Tell us through [Issues](https://github.com/GanyuanRan/Autoloom/issues) what Aut
 
 When reporting a problem, include the version, system information, reproduction steps, and expected and actual results. Remove keys, access tokens and personal information before sharing logs or screenshots.
 
-<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
-
 This repository is Autoloom's official hub for downloads, release notes and feedback.
 
 Autoloom’s client source code is not currently public. As the project evolves, we’ll evaluate what to open source and how, taking community feedback and sustainable maintenance into account. The current closed-source approach is not a commitment to staying closed source permanently. We’ll share concrete plans in this repository when they’re ready.

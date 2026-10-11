@@ -106,8 +106,6 @@ Autoloom 目前处于 Beta 阶段。全自动开发与更好的三者平衡，�
 
 反馈问题时请附上版本、系统信息、复现步骤及预期和实际结果；分享日志或截图前请移除密钥、访问令牌和个人信息。
 
-<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
-
 本仓库是 Autoloom 的官方下载、版本说明与反馈入口。
 
 Autoloom 客户端源码目前尚未公开。我们会根据项目进展、社区反馈和持续维护的实际情况，评估后续的开源范围与方式。当前的闭源状态并不意味着永久闭源；具体计划确定后，将在本仓库公布。
