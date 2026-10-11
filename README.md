@@ -2,8 +2,6 @@
 
 <p align="center"><strong>Governance Engineering for Coding Agents</strong></p>
 
-<p align="center">Free desktop client · Your choice of model · Windows x64 Beta</p>
-
 <p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/github/v/release/GanyuanRan/Autoloom?include_prereleases&amp;sort=semver&amp;style=flat-square&amp;label=release" alt="Latest release, including Beta" /></a> <a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/badge/platform-Windows%20x64-0078D4?style=flat-square" alt="Windows x64" /></a> <a href="docs/README.md"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87%20%2F%20English-0A7E8C?style=flat-square" alt="Documentation in Chinese and English" /></a></p>
 
 <p align="center"><a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" /></a> <a href="https://www.electronjs.org/"><img src="https://img.shields.io/badge/Electron-2B2E3A?style=flat-square&amp;logo=electron&amp;logoColor=9FEAF9" alt="Electron" /></a> <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=flat-square&amp;logo=react&amp;logoColor=61DAFB" alt="React" /></a> <a href="https://github.com/GanyuanRan/Aegis"><img src="https://img.shields.io/badge/Aegis-Governance-7C3AED?style=flat-square" alt="Aegis Governance" /></a></p>
