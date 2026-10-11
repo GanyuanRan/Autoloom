@@ -11,6 +11,8 @@ const props = defineProps({ locale: { type: String, required: true } })
 const { theme } = useData()
 const copy = computed(() => aegisContent[props.locale])
 const siteCopy = computed(() => homeContent[props.locale])
+const heroIllustration = computed(() => withBase(`/media/aegis-governance-hero-${props.locale}.webp`))
+const heroIllustrationAlt = computed(() => `Aegis: ${copy.value.hero.flow.map(([, label]) => label).join(' → ')}`)
 const release = computed(() => theme.value.release)
 const prefix = computed(() => props.locale === 'en' ? '/en' : '')
 const link = path => withBase(`${prefix.value}${path}`)
@@ -34,10 +36,9 @@ const install = `${repository}#quick-install`
           <div class="ag-actions"><a class="al-primary-button" :href="repository">{{ copy.hero.github }}</a><a class="al-secondary-button al-secondary-button-light" :href="install">{{ copy.hero.install }}</a></div>
           <p class="ag-meta">{{ copy.hero.meta }}</p>
         </div>
-        <div class="ag-hero-system" aria-hidden="true">
-          <div class="ag-core"><span>A</span><strong>AEGIS</strong><small>Governance Engineering</small></div>
-          <ol><li v-for="([number, label]) in copy.hero.flow" :key="number"><span>{{ number }}</span><strong>{{ label }}</strong></li></ol>
-        </div>
+        <figure class="ag-hero-system">
+          <img :src="heroIllustration" :alt="heroIllustrationAlt" width="1448" height="1086" decoding="async" fetchpriority="high" />
+        </figure>
       </section>
 
       <section id="governance" class="al-section ag-value-section">
