@@ -4,9 +4,11 @@
 
 <p align="center">免费桌面客户端 · 自选模型 · Windows x64 Beta</p>
 
-<p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Beta</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
+<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/github/v/release/GanyuanRan/Autoloom?include_prereleases&amp;sort=semver&amp;style=flat-square&amp;label=release" alt="最新版本（含 Beta）" /></a> <a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/badge/platform-Windows%20x64-0078D4?style=flat-square" alt="Windows x64" /></a> <a href="docs/README.zh-CN.md"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87%20%2F%20English-0A7E8C?style=flat-square" alt="中文与英文使用文档" /></a></p>
 
-<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
+<p align="center"><a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" /></a> <a href="https://www.electronjs.org/"><img src="https://img.shields.io/badge/Electron-2B2E3A?style=flat-square&amp;logo=electron&amp;logoColor=9FEAF9" alt="Electron" /></a> <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=flat-square&amp;logo=react&amp;logoColor=61DAFB" alt="React" /></a> <a href="https://github.com/GanyuanRan/Aegis"><img src="https://img.shields.io/badge/Aegis-Governance-7C3AED?style=flat-square" alt="Aegis Governance" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/">官网</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">下载 Beta</a> · <a href="docs/README.zh-CN.md">使用文档</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">反馈与建议</a> · <a href="README.md">English</a></p>
 
 <p align="center"><strong>40 秒真实任务演示</strong></p>
 
@@ -107,6 +109,8 @@ Autoloom 目前处于 Beta 阶段。全自动开发与更好的三者平衡，�
 欢迎在 [Issues](https://github.com/GanyuanRan/Autoloom/issues) 告诉我们：Autoloom 帮你完成了什么，哪一步仍需要你反复提醒，哪些地方让你不敢接受结果。你的真实使用经历，会帮助我们判断下一步最值得改进什么。
 
 反馈问题时请附上版本、系统信息、复现步骤及预期和实际结果；分享日志或截图前请移除密钥、访问令牌和个人信息。
+
+<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
 本仓库是 Autoloom 的官方下载、版本说明与反馈入口。
 

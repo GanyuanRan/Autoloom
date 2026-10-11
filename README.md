@@ -4,9 +4,11 @@
 
 <p align="center">Free desktop client · Your choice of model · Windows x64 Beta</p>
 
-<p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Beta</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
+<p align="center"><a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/github/v/release/GanyuanRan/Autoloom?include_prereleases&amp;sort=semver&amp;style=flat-square&amp;label=release" alt="Latest release, including Beta" /></a> <a href="https://github.com/GanyuanRan/Autoloom/releases"><img src="https://img.shields.io/badge/platform-Windows%20x64-0078D4?style=flat-square" alt="Windows x64" /></a> <a href="docs/README.md"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87%20%2F%20English-0A7E8C?style=flat-square" alt="Documentation in Chinese and English" /></a></p>
 
-<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
+<p align="center"><a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" /></a> <a href="https://www.electronjs.org/"><img src="https://img.shields.io/badge/Electron-2B2E3A?style=flat-square&amp;logo=electron&amp;logoColor=9FEAF9" alt="Electron" /></a> <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=flat-square&amp;logo=react&amp;logoColor=61DAFB" alt="React" /></a> <a href="https://github.com/GanyuanRan/Aegis"><img src="https://img.shields.io/badge/Aegis-Governance-7C3AED?style=flat-square" alt="Aegis Governance" /></a></p>
+
+<p align="center"><a href="https://autoloom.codes/en/">Website</a> · <a href="https://github.com/GanyuanRan/Autoloom/releases">Download Beta</a> · <a href="docs/README.md">Documentation</a> · <a href="https://github.com/GanyuanRan/Autoloom/issues">Feedback &amp; ideas</a> · <a href="README.zh-CN.md">中文</a></p>
 
 <p align="center"><strong>40-second real-task demo</strong></p>
 
@@ -107,6 +109,8 @@ The [user documentation](docs/README.md) covers model providers, permissions, lo
 Tell us through [Issues](https://github.com/GanyuanRan/Autoloom/issues) what Autoloom helped you finish, which steps still needed repeated reminders, and where you hesitated to accept its results. Your actual experience will help us choose what is most worth improving next.
 
 When reporting a problem, include the version, system information, reproduction steps, and expected and actual results. Remove keys, access tokens and personal information before sharing logs or screenshots.
+
+<p align="center"><a href="https://linux.do/"><img src="https://img.shields.io/badge/LINUX-DO-FFB003.svg" alt="LINUX DO" /></a></p>
 
 This repository is Autoloom's official hub for downloads, release notes and feedback.
 
