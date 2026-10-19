@@ -7,6 +7,7 @@ GitHub Releases are the source of truth for changes, downloads, compatibility no
 
 ## Releases
 
+- [Autoloom 0.1.0-beta.6](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.0-beta.6) — 2026-10-19 — Pre-release
 - [Autoloom 0.1.0-beta.5](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.0-beta.5) — 2026-10-19 — Pre-release
 - [Autoloom 0.1.0-beta.4](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.0-beta.4) — 2026-10-18 — Pre-release
 - [Autoloom 0.1.0-beta.3](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.0-beta.3) — 2026-10-17 — Pre-release
