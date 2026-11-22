@@ -7,6 +7,7 @@ GitHub Releases 是版本变更、下载文件、兼容性说明和验证范围�
 
 ## 已发布版本
 
+- [Autoloom 0.1.3](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.3) — 2026-11-22 — 稳定版
 - [Autoloom 0.1.2](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.2) — 2026-11-19 — 稳定版
 - [Autoloom 0.1.2 macOS 实验版 Beta 1（未经真机验收）](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.2-macos-beta.1) — 2026-11-19 — 预发布
 - [Autoloom 0.1.1 macOS 实验版 Beta 1（未经真机验收）](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.1-macos-beta.1) — 2026-11-19 — 预发布
