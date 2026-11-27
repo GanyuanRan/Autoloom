@@ -7,6 +7,7 @@ GitHub Releases are the source of truth for changes, downloads, compatibility no
 
 ## Releases
 
+- [Autoloom 0.1.4 macOS 实验版 Beta 1（未经真机验收） / macOS Experimental Beta 1 (not accepted on a real Mac)](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.4-macos-beta.1) — 2026-11-27 — Pre-release
 - [Autoloom 0.1.4](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.4) — 2026-11-27 — Stable
 - [Autoloom 0.1.3 macOS 实验版 Beta 1（未经真机验收）](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.3-macos-beta.1) — 2026-11-22 — Pre-release
 - [Autoloom 0.1.3](https://github.com/GanyuanRan/Autoloom/releases/tag/v0.1.3) — 2026-11-22 — Stable
